@@ -5,7 +5,8 @@
 
 {
   imports =
-    [ (modulesPath + "/installer/scan/not-detected.nix")
+    [
+      (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
   boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "nvme" "usbhid" "ums_realtek" "usb_storage" "sd_mod" "sr_mod" ];
@@ -14,23 +15,27 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-label/ROOT";
+    {
+      device = "/dev/disk/by-label/ROOT";
       fsType = "btrfs";
       options = [ "compress=zstd" "autodefrag" "noatime" ];
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-label/BOOT";
+    {
+      device = "/dev/disk/by-label/BOOT";
       fsType = "vfat";
     };
 
   fileSystems."/mnt/ssd" =
-    { device = "/dev/disk/by-label/SSD";
+    {
+      device = "/dev/disk/by-label/SSD";
       fsType = "ext4";
     };
 
   fileSystems."/mnt/hdd" =
-    { device = "/dev/disk/by-label/HDD";
+    {
+      device = "/dev/disk/by-label/HDD";
       fsType = "ext4";
     };
 

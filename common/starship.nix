@@ -6,8 +6,8 @@
       username.show_always = true;
 
       character = {
-        success_symbol = "[➜](bold green) ";
-        error_symbol = "[✗](bold red)";
+        success_symbol = "[>](bold yellow)[>](bold red)[>](bold blue)";
+        error_symbol = "[>>>](bold red)";
       };
 
       directory = {
