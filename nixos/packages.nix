@@ -1,0 +1,121 @@
+{ pkgs, ... }:
+
+{
+  home.packages = with pkgs; [
+    comma
+    aspell
+    aspellDicts.en
+    aspellDicts.da
+    exa
+    bat
+    ripgrep
+    wget
+    unzip
+    killall
+    tetex
+    dash
+    helix
+    bottom
+    time
+    neofetch
+    afetch
+    yt-dlp
+    ffmpeg
+    wally-cli
+    w3m
+    curl
+    git
+    gnupg
+    imv
+    asciinema
+
+    neovide
+    celluloid
+    element-desktop
+    insomnia
+    keepassxc
+    grapejuice
+    dino
+    blanket
+    tor-browser-bundle-bin
+    thunderbird
+    nyxt
+    transmission-gtk
+    waydroid
+    libreoffice-fresh
+    vscodium-fhs
+    librewolf
+    thunderbird
+
+    spotify
+    discord-canary
+    steam
+    steam-run-native
+    lutris
+    jetbrains.rider
+    jetbrains.idea-ultimate
+
+    gnome.gnome-boxes
+    gnome.gnome-tweaks
+
+    yaru-theme
+    yaru-remix-theme
+    orchis-theme
+
+    python310
+    nodejs
+    dotnet-sdk
+    omnisharp-roslyn
+    rnix-lsp
+    rust-analyzer
+    jsonnet
+    kotlin-language-server
+    ktlint
+    gopls
+    google-java-format
+    clang-tools
+    delve
+    black
+    nixfmt
+
+    libgccjit
+    gcc11
+    cargo
+    gradle
+    gnumake
+    cmake
+    libtool
+    glibc
+    jdk
+    kotlin
+    kotlin-native
+    rustc
+    go
+    clippy
+    editorconfig-core-c
+    editorconfig-checker
+
+    python310Packages.pyqt5
+    python310Packages.sip
+    python310Packages.pyqtwebengine
+    python310Packages.epc
+    python310Packages.lxml
+    python310Packages.qrcode
+    python310Packages.pysocks
+    python310Packages.pymupdf
+    python310Packages.pypinyin
+    python310Packages.psutil
+    python310Packages.retry
+    python310Packages.markdown
+    python310Packages.python-lsp-server
+
+    nodePackages.npm
+    nodePackages.typescript
+    nodePackages.typescript-language-server
+    nodePackages.prettier
+    nodePackages.lua-fmt
+    # nodePackages.webtorrent-cli
+    dotnetPackages.Nuget
+    haskellPackages.brittany
+  ];
+}
