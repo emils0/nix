@@ -17,8 +17,8 @@
     };
 
     shellInit = ''
-      fish_add_path /Users/emil/.emacs.d/bin
-      fish_add_path /Users/emil/.dotnet/tools
+      fish_add_path ~/.emacs.d/bin
+      fish_add_path ~/.dotnet/tools
       set EDITOR helix
     '';
 

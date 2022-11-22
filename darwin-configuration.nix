@@ -9,7 +9,7 @@ in
 {
   imports = [
     "${home-manager}/nix-darwin"
-    ./homebrew.nix
+    ./darwin/homebrew.nix
     # ./fish.nix
     # ./skhd.nix
   ];
@@ -39,14 +39,9 @@ in
 
   home-manager.users.emil = { pkgs, lib, ... }: {
     imports = [
-      ./darwin-application-activation.nix
-      ./fish.nix
-      ./packages.nix
-      ./helix.nix
-      ./starship.nix
-      ./zellij.nix
-      ./wezterm.nix
-      ./bat.nix
+      ./darwin/darwin-application-activation.nix
+      ./darwin/packages.nix
+      ./common
     ];
 
     programs.java.enable = true;
