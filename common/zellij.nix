@@ -9,7 +9,6 @@
       pane_frames = false;
       ui.pane_frames.rounded_corners = true;
 
-
       themes.catppuccin-mocha = {
         bg = "#585b70"; # Surface2
         fg = "#cdd6f4";

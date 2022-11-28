@@ -38,7 +38,7 @@
       "insomnia"
     ];
 
-    masApps = { Amphetamine = 937984704; };
+    masApps = {Amphetamine = 937984704;};
 
     taps = [
       "homebrew/services"

@@ -1,25 +1,25 @@
-{ config, pkgs, ... }:
-
-let
-  home-manager = builtins.fetchTarball
-    "https://github.com/nix-community/home-manager/archive/master.tar.gz";
-in
-
-let
-  nix-gaming = builtins.fetchTarball
-    "https://github.com/fufexan/nix-gaming/archive/master.tar.gz";
-in
-
 {
+  config,
+  pkgs,
+  ...
+}: let
+  home-manager =
+    builtins.fetchTarball
+    "https://github.com/nix-community/home-manager/archive/master.tar.gz";
+in let
+  nix-gaming =
+    builtins.fetchTarball
+    "https://github.com/fufexan/nix-gaming/archive/master.tar.gz";
+in {
   imports = [
     "${home-manager}/nixos"
     "${nix-gaming}/modules/pipewireLowLatency.nix"
     ./nixos/hardware-configuration.nix
   ];
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = ["nix-command" "flakes"];
 
-  home-manager.users.emil = { pkgs, ... }: {
+  home-manager.users.emil = {pkgs, ...}: {
     imports = [
       ./nixos/packages.nix
       ./common
@@ -27,7 +27,7 @@ in
 
     programs.zoxide = {
       enable = true;
-      options = [ "--cmd s" ];
+      options = ["--cmd s"];
     };
 
     programs.home-manager.enable = true;
@@ -57,12 +57,12 @@ in
     programs.chromium = {
       enable = true;
       package = pkgs.ungoogled-chromium;
-      commandLineArgs = [ "--force-dark-mode" "--enable-features=WebUIDarkMode" ];
+      commandLineArgs = ["--force-dark-mode" "--enable-features=WebUIDarkMode"];
     };
   };
 
   fonts.fonts = with pkgs; [
-    (nerdfonts.override { fonts = [ "FiraCode" "CascadiaCode" ]; })
+    (nerdfonts.override {fonts = ["FiraCode" "CascadiaCode"];})
     fira-code
     tamzen
     terminus_font
@@ -72,13 +72,12 @@ in
     lato
   ];
 
-
   nix.extraOptions = ''
     keep-outputs = true
   '';
 
   # security
-  nix.settings.allowed-users = [ "@wheel" ];
+  nix.settings.allowed-users = ["@wheel"];
   security.sudo.execWheelOnly = true;
 
   services.flatpak.enable = true;
@@ -88,7 +87,7 @@ in
   boot.loader.efi.canTouchEfiVariables = true;
 
   networking.hostName = "nixos";
-  networking.nameservers = [ "91.239.100.100" "89.233.43.71" ];
+  networking.nameservers = ["91.239.100.100" "89.233.43.71"];
 
   # Set your time zone.
   time.timeZone = "Europe/Copenhagen";
@@ -121,7 +120,7 @@ in
 
   # Enable propietary NVIDIA drivers
   hardware.nvidia.modesetting.enable = true;
-  services.xserver.videoDrivers = [ "nvidia" ];
+  services.xserver.videoDrivers = ["nvidia"];
 
   # Enable sound.
   security.rtkit.enable = true;
@@ -155,10 +154,10 @@ in
   users.users.emil = {
     isNormalUser = true;
     initialPassword = "Kode1234";
-    extraGroups = [ "wheel" "libvirt" ];
+    extraGroups = ["wheel" "libvirt"];
   };
 
-  boot.kernelModules = [ "kvm-intel" ];
+  boot.kernelModules = ["kvm-intel"];
 
   nixpkgs.config.allowUnfree = true;
 

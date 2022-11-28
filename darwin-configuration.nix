@@ -1,12 +1,13 @@
-{ config, pkgs, lib, ... }:
-
-let
-  home-manager = builtins.fetchTarball
-    "https://github.com/nix-community/home-manager/archive/master.tar.gz";
-
-in
-
 {
+  config,
+  pkgs,
+  lib,
+  ...
+}: let
+  home-manager =
+    builtins.fetchTarball
+    "https://github.com/nix-community/home-manager/archive/master.tar.gz";
+in {
   imports = [
     "${home-manager}/nix-darwin"
     ./darwin/homebrew.nix
@@ -14,7 +15,7 @@ in
     # ./skhd.nix
   ];
 
-  environment.variables = { EDITOR = "hx"; };
+  environment.variables = {EDITOR = "hx";};
 
   users.users.emil.shell = pkgs.fish;
   programs.fish.enable = true;
@@ -37,7 +38,11 @@ in
 
   home-manager.useGlobalPkgs = true;
 
-  home-manager.users.emil = { pkgs, lib, ... }: {
+  home-manager.users.emil = {
+    pkgs,
+    lib,
+    ...
+  }: {
     imports = [
       ./darwin/darwin-application-activation.nix
       ./darwin/packages.nix
@@ -59,14 +64,14 @@ in
 
     programs.zoxide = {
       enable = true;
-      options = [ "--cmd s" ];
+      options = ["--cmd s"];
     };
   };
 
   fonts.fontDir.enable = true;
 
   fonts.fonts = with pkgs; [
-    (nerdfonts.override { fonts = [ "FiraCode" "CascadiaCode" ]; })
+    (nerdfonts.override {fonts = ["FiraCode" "CascadiaCode"];})
     fira-code
     tamzen
     work-sans

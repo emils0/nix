@@ -1,17 +1,21 @@
-{ lib, pkgs, config, ... }:
 {
+  lib,
+  pkgs,
+  config,
+  ...
+}: {
   # Copy GUI apps to "~/Applications/Home Manager Apps"
   # Based on this comment: https://github.com/nix-community/home-manager/issues/1341#issuecomment-778820334
   home.activation.darwinApps =
-    if pkgs.stdenv.isDarwin then
-      let
-        apps = pkgs.buildEnv {
-          name = "home-manager-applications";
-          paths = config.home.packages;
-          pathsToLink = "/Applications";
-        };
-      in
-      lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+    if pkgs.stdenv.isDarwin
+    then let
+      apps = pkgs.buildEnv {
+        name = "home-manager-applications";
+        paths = config.home.packages;
+        pathsToLink = "/Applications";
+      };
+    in
+      lib.hm.dag.entryAfter ["writeBoundary"] ''
         # Install MacOS applications to the user environment.
         HM_APPS="$HOME/Applications/Home Manager Apps"
         # Reset current state
@@ -23,6 +27,5 @@
         $DRY_RUN_CMD cp --archive -H --dereference ${apps}/Applications/* "$HM_APPS"
         $DRY_RUN_CMD chmod +w -R "$HM_APPS"
       ''
-    else
-      "";
+    else "";
 }
