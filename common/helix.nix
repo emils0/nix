@@ -198,7 +198,7 @@
         "variable" = fg0;
         "variable.builtin" = purple;
         "variable.parameter" = fg0;
-        "variable.other.member" = blue;
+        "variable.other.member" = yellow;
         "label" = aqua;
         "punctuation" = gray2;
         "punctuation.delimiter" = gray2;
@@ -208,6 +208,8 @@
         "keyword.control" = red;
         "keyword.directive" = aqua;
         "keyword.storage.modifier" = orange;
+        "keyword.control.return" = {modifiers = ["bold"];};
+        "keyword.control.exception" = {modifiers = ["bold"];};
         "operator" = orange;
         "function" = green;
         "function.method" = aqua;
