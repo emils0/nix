@@ -129,15 +129,6 @@
     themes = {
       gruvbox_mix_dark_medium =
         let
-          bg0 = "#282828";
-          bg1 = "#32302f";
-          bg2 = "#32302f";
-          bg3 = "#45403d";
-          bg4 = "#45403d";
-          bg5 = "#5a524c";
-          bg_statusline1 = "#32302f";
-          bg_statusline2 = "#3a3735";
-          bg_statusline3 = "#504945";
           bg_diff_green = "#34381b";
           bg_visual_green = "#3b4439";
           bg_diff_red = "#402120";
@@ -147,54 +138,77 @@
           bg_visual_yellow = "#4f422e";
           bg_current_word = "#3c3836";
 
-          fg0 = "#e2cca9";
-          fg1 = "#e2cca9";
-          red = "#f2594b";
-          orange = "#f28534";
-          yellow = "#e9b143";
-          green = "#b0b846";
-          aqua = "#8bba7f";
-          blue = "#80aa9e";
-          purple = "#d3869b";
-          bg_red = "#db4740";
-          bg_green = "#b0b846";
-          bg_yellow = "#e9b143";
+          bg0 = "#101010";
+          bg1 = "#1c1c1c";
+          bg = "#292828";
+          bg2 = "#32302f";
+          bg3 = "#383432";
+          bg4 = "#3c3836";
+          bg5 = "#45403d";
+          bg6 = "#504945";
+          bg7 = "#5a524c";
+          bg8 = "#665c54";
+          bg9 = "#7c6f64";
+          gray0 = "#7c6f64";
+          gray1 = "#928374";
+          gray2 = "#a89984";
 
-          grey0 = "#7c6f64";
-          grey1 = "#928374";
-          grey2 = "#a89984";
+          fg0 = "#ddc7a1";
+          fg = "#d4be98";
+          fg1 = "#c5b18d";
+
+          red = "#ea6962";
+          orange = "#e78a4e";
+          yellow = "#d8a657";
+          green = "#a9b665";
+          aqua = "#89b482";
+          blue = "#7daea3";
+          purple = "#d3869b";
+
+          dimRed = "#b85651";
+          dimOrange = "#bd6f3e";
+          dimYellow = "#c18f41";
+          dimGreen = "#8f9a52";
+          dimAqua = "#72966c";
+          dimBlue = "#68948a";
+          dimPurple = "#ab6c7d";
         in
         {
 
-          "type" = yellow;
+          "type" = blue;
           "constant" = purple;
+          "constant.builtin" = purple;
+          "constant.character.escape" = yellow;
           "constant.numeric" = purple;
-          "constant.character.escape" = orange;
           "string" = green;
           "string.regexp" = blue;
-          "comment" = grey0;
+          "comment" = gray0;
           "variable" = fg0;
-          "variable.builtin" = blue;
+          "variable.builtin" = purple;
           "variable.parameter" = fg0;
-          "variable.other.member" = fg0;
+          "variable.other.member" = blue;
           "label" = aqua;
-          "punctuation" = grey2;
-          "punctuation.delimiter" = grey2;
-          "punctuation.bracket" = fg0;
+          "punctuation" = gray2;
+          "punctuation.delimiter" = gray2;
+          "punctuation.bracket" = gray2;
+          "punctuation.special" = yellow;
           "keyword" = red;
+          "keyword.control" = red;
           "keyword.directive" = aqua;
+          "keyword.storage.modifier" = orange;
           "operator" = orange;
           "function" = green;
-          "function.builtin" = blue;
-          "function.macro" = aqua;
+          "function.method" = aqua;
+          "function.builtin" = green;
+          "function.macro" = green;
           "tag" = yellow;
           "namespace" = aqua;
-          "attribute" = aqua;
+          "attribute" = blue;
           "constructor" = yellow;
           "module" = blue;
           "special" = orange;
 
-          "markup.heading.marker" = grey2;
+          "markup.heading.marker" = gray2;
           "markup.heading.1" = { fg = red; modifiers = [ "bold" ]; };
           "markup.heading.2" = { fg = orange; modifiers = [ "bold" ]; };
           "markup.heading.3" = { fg = yellow; modifiers = [ "bold" ]; };
@@ -206,33 +220,34 @@
           "markup.italic" = { modifiers = [ "italic" ]; };
           "markup.link.url" = { fg = blue; modifiers = [ "underlined" ]; };
           "markup.link.text" = purple;
-          "markup.quote" = grey2;
+          "markup.quote" = gray2;
           "markup.raw" = green;
 
           "diff.plus" = green;
           "diff.delta" = orange;
           "diff.minus" = red;
 
-          "ui.background" = { bg = bg0; };
-          "ui.background.separator" = grey0;
-          "ui.cursor" = { fg = bg0; bg = fg0; };
+          "ui.background" = { bg = bg; };
+          "ui.background.separator" = gray0;
+          "ui.cursor" = { fg = bg0; bg = fg1; };
+          "ui.cursor.primary" = { fg = bg0; bg = fg0; };
           "ui.cursor.match" = { fg = orange; bg = bg_visual_yellow; };
-          "ui.cursor.insert" = { fg = bg0; bg = grey2; };
+          "ui.cursor.insert" = { fg = bg0; bg = gray2; };
           "ui.cursor.select" = { fg = bg0; bg = blue; };
-          "ui.cursorline.primary" = { bg = bg1; };
-          "ui.cursorline.secondary" = { bg = bg1; };
+          "ui.cursorline.primary" = { bg = bg2; };
+          "ui.cursorline.secondary" = { bg = bg3; };
           "ui.selection" = { bg = bg3; };
-          "ui.linenr" = grey0;
+          "ui.linenr" = gray0;
           "ui.linenr.selected" = fg0;
           "ui.statusline" = { fg = fg0; bg = bg3; };
-          "ui.statusline.inactive" = { fg = grey0; bg = bg1; };
+          "ui.statusline.inactive" = { fg = gray0; bg = bg1; };
           "ui.statusline.normal" = { fg = bg0; bg = fg0; modifiers = [ "bold" ]; };
           "ui.statusline.insert" = { fg = bg0; bg = yellow; modifiers = [ "bold" ]; };
           "ui.statusline.select" = { fg = bg0; bg = blue; modifiers = [ "bold" ]; };
-          "ui.bufferline" = { fg = grey0; bg = bg1; };
+          "ui.bufferline" = { fg = gray0; bg = bg1; };
           "ui.bufferline.active" = { fg = fg0; bg = bg3; modifiers = [ "bold" ]; };
-          "ui.popup" = { fg = grey2; bg = bg2; };
-          "ui.window" = { fg = grey0; bg = bg0; };
+          "ui.popup" = { fg = gray2; bg = bg2; };
+          "ui.window" = { fg = gray0; bg = bg2; };
           "ui.help" = { fg = fg0; bg = bg2; };
           "ui.text" = fg0;
           "ui.text.focus" = fg0;
