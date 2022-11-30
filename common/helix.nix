@@ -205,11 +205,8 @@
         "punctuation.bracket" = gray2;
         "punctuation.special" = yellow;
         "keyword" = red;
-        "keyword.control" = red;
         "keyword.directive" = aqua;
         "keyword.storage.modifier" = orange;
-        "keyword.control.return" = {modifiers = ["bold"];};
-        "keyword.control.exception" = {modifiers = ["bold"];};
         "operator" = orange;
         "function" = green;
         "function.method" = aqua;
@@ -295,7 +292,7 @@
         };
         "ui.statusline.inactive" = {
           fg = gray0;
-          bg = bg1;
+          bg = bg2;
         };
         "ui.statusline.normal" = {
           fg = bg0;
