@@ -144,13 +144,10 @@
     themes = {
       gruvbox_mix_dark_medium = let
         bg_diff_green = "#34381b";
-        bg_visual_green = "#3b4439";
         bg_diff_red = "#402120";
-        bg_visual_red = "#4c3432";
         bg_diff_blue = "#0e363e";
-        bg_visual_blue = "#374141";
         bg_visual_yellow = "#4f422e";
-        bg_current_word = "#3c3836";
+        bg_cursorline = "#2F2D2D";
 
         bg0 = "#101010";
         bg1 = "#1c1c1c";
@@ -281,8 +278,8 @@
           fg = bg0;
           bg = blue;
         };
-        "ui.cursorline.primary" = {bg = bg2;};
-        "ui.cursorline.secondary" = {bg = bg3;};
+        "ui.cursorline.primary" = {bg = bg_cursorline;};
+        "ui.cursorline.secondary" = {bg = bg;};
         "ui.selection" = {bg = bg3;};
         "ui.linenr" = gray0;
         "ui.linenr.selected" = fg0;
