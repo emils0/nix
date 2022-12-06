@@ -1,9 +1,11 @@
-{
+let
+  theme = import ./gruvbox/mix-light-medium.nix;
+in {
   programs.helix = {
     enable = true;
 
     settings = {
-      theme = "gruvbox_mix_dark_medium";
+      theme = "current";
 
       editor = {
         scrolloff = 9;
@@ -108,6 +110,15 @@
       }
 
       {
+        name = "markdown";
+        formatter = {
+          command = "prettier";
+          args = ["--parser" "markdown"];
+        };
+        auto-format = true;
+      }
+
+      {
         name = "bash";
         indent = {
           tab-width = 4;
@@ -142,210 +153,171 @@
     ];
 
     themes = {
-      gruvbox_mix_dark_medium = let
-        bg_diff_green = "#34381b";
-        bg_diff_red = "#402120";
-        bg_diff_blue = "#0e363e";
-        bg_visual_yellow = "#4f422e";
-        bg_cursorline = "#3c3836";
-
-        bg0 = "#101010";
-        bg1 = "#1c1c1c";
-        bg = "#292828";
-        bg2 = "#32302f";
-        bg3 = "#383432";
-        bg4 = "#3c3836";
-        bg5 = "#45403d";
-        bg6 = "#504945";
-        bg7 = "#5a524c";
-        bg8 = "#665c54";
-        bg9 = "#7c6f64";
-        gray0 = "#7c6f64";
-        gray1 = "#928374";
-        gray2 = "#a89984";
-
-        fg0 = "#ddc7a1";
-        fg = "#d4be98";
-        fg1 = "#c5b18d";
-
-        red = "#ea6962";
-        orange = "#e78a4e";
-        yellow = "#d8a657";
-        green = "#a9b665";
-        aqua = "#89b482";
-        blue = "#7daea3";
-        purple = "#d3869b";
-
-        dimRed = "#b85651";
-        dimOrange = "#bd6f3e";
-        dimYellow = "#c18f41";
-        dimGreen = "#8f9a52";
-        dimAqua = "#72966c";
-        dimBlue = "#68948a";
-        dimPurple = "#ab6c7d";
+      current = let
+        color = theme;
       in {
-        "type" = blue;
-        "constant" = purple;
-        "constant.builtin" = purple;
-        "constant.character.escape" = yellow;
-        "constant.numeric" = purple;
-        "string" = green;
-        "string.regexp" = blue;
-        "comment" = gray0;
-        "variable" = fg0;
-        "variable.builtin" = purple;
-        "variable.parameter" = fg0;
-        "variable.other.member" = yellow;
-        "label" = aqua;
-        "punctuation" = gray2;
-        "punctuation.delimiter" = gray2;
-        "punctuation.bracket" = gray2;
-        "punctuation.special" = yellow;
-        "keyword" = red;
-        "keyword.directive" = aqua;
-        "keyword.storage.modifier" = orange;
-        "operator" = orange;
-        "function" = green;
-        "function.method" = aqua;
-        "function.builtin" = green;
-        "function.macro" = green;
-        "tag" = yellow;
-        "namespace" = aqua;
-        "attribute" = blue;
-        "constructor" = yellow;
-        "module" = blue;
-        "special" = orange;
+        "type" = theme.blue;
+        "constant" = theme.purple;
+        "constant.builtin" = theme.purple;
+        "constant.character.escape" = theme.yellow;
+        "constant.numeric" = theme.purple;
+        "string" = theme.green;
+        "string.regexp" = theme.blue;
+        "comment" = theme.gray0;
+        "variable" = theme.fg0;
+        "variable.builtin" = theme.purple;
+        "variable.parameter" = theme.fg0;
+        "variable.other.member" = theme.yellow;
+        "label" = theme.aqua;
+        "punctuation" = theme.gray2;
+        "punctuation.delimiter" = theme.gray2;
+        "punctuation.bracket" = theme.gray2;
+        "punctuation.special" = theme.yellow;
+        "keyword" = theme.red;
+        "keyword.directive" = theme.aqua;
+        "keyword.storage.modifier" = theme.orange;
+        "operator" = theme.orange;
+        "function" = theme.green;
+        "function.method" = theme.aqua;
+        "function.builtin" = theme.green;
+        "function.macro" = theme.green;
+        "tag" = theme.yellow;
+        "namespace" = theme.aqua;
+        "attribute" = theme.blue;
+        "constructor" = theme.yellow;
+        "module" = theme.blue;
+        "special" = theme.orange;
 
-        "markup.heading.marker" = gray2;
+        "markup.heading.marker" = theme.gray2;
         "markup.heading.1" = {
-          fg = red;
+          fg = theme.red;
           modifiers = ["bold"];
         };
         "markup.heading.2" = {
-          fg = orange;
+          fg = theme.orange;
           modifiers = ["bold"];
         };
         "markup.heading.3" = {
-          fg = yellow;
+          fg = theme.yellow;
           modifiers = ["bold"];
         };
         "markup.heading.4" = {
-          fg = green;
+          fg = theme.green;
           modifiers = ["bold"];
         };
         "markup.heading.5" = {
-          fg = blue;
+          fg = theme.blue;
           modifiers = ["bold"];
         };
         "markup.heading.6" = {
-          fg = fg0;
+          fg = theme.fg0;
           modifiers = ["bold"];
         };
-        "markup.list" = red;
+        "markup.list" = theme.red;
         "markup.bold" = {modifiers = ["bold"];};
         "markup.italic" = {modifiers = ["italic"];};
         "markup.link.url" = {
-          fg = blue;
+          fg = theme.blue;
           modifiers = ["underlined"];
         };
-        "markup.link.text" = purple;
-        "markup.quote" = gray2;
-        "markup.raw" = green;
+        "markup.link.text" = theme.purple;
+        "markup.quote" = theme.gray2;
+        "markup.raw" = theme.green;
 
-        "diff.plus" = green;
-        "diff.delta" = orange;
-        "diff.minus" = red;
+        "diff.plus" = theme.green;
+        "diff.delta" = theme.orange;
+        "diff.minus" = theme.red;
 
-        "ui.background" = {bg = bg;};
-        "ui.background.separator" = gray0;
+        "ui.background" = {bg = theme.bg;};
+        "ui.background.separator" = theme.gray0;
         "ui.cursor" = {
-          fg = bg0;
-          bg = fg1;
+          fg = theme.bg0;
+          bg = theme.fg1;
         };
         "ui.cursor.primary" = {
-          fg = bg0;
-          bg = fg0;
+          fg = theme.bg0;
+          bg = theme.fg0;
         };
         "ui.cursor.match" = {
-          fg = orange;
-          bg = bg_visual_yellow;
+          fg = theme.orange;
+          bg = theme.bg_visual_yellow;
         };
         "ui.cursor.insert" = {
-          fg = bg0;
-          bg = gray2;
+          fg = theme.bg0;
+          bg = theme.gray2;
         };
         "ui.cursor.select" = {
-          fg = bg0;
-          bg = blue;
+          fg = theme.bg0;
+          bg = theme.blue;
         };
-        "ui.cursorline.primary" = {bg = bg_cursorline;};
-        "ui.cursorline.secondary" = {bg = bg;};
-        "ui.selection" = {bg = bg3;};
-        "ui.linenr" = gray0;
-        "ui.linenr.selected" = fg0;
+        "ui.cursorline.primary" = {bg = theme.bg4;};
+        "ui.cursorline.secondary" = {bg = theme.bg;};
+        "ui.selection" = {bg = theme.bg3;};
+        "ui.linenr" = theme.gray0;
+        "ui.linenr.selected" = theme.fg0;
         "ui.statusline" = {
-          fg = fg0;
-          bg = bg3;
+          fg = theme.fg0;
+          bg = theme.bg3;
         };
         "ui.statusline.inactive" = {
-          fg = gray0;
-          bg = bg2;
+          fg = theme.gray0;
+          bg = theme.bg2;
         };
         "ui.statusline.normal" = {
-          fg = bg0;
-          bg = fg0;
+          fg = theme.bg0;
+          bg = theme.fg0;
           modifiers = ["bold"];
         };
         "ui.statusline.insert" = {
-          fg = bg0;
-          bg = yellow;
+          fg = theme.bg0;
+          bg = theme.yellow;
           modifiers = ["bold"];
         };
         "ui.statusline.select" = {
-          fg = bg0;
-          bg = blue;
+          fg = theme.bg0;
+          bg = theme.blue;
           modifiers = ["bold"];
         };
         "ui.bufferline" = {
-          fg = gray0;
-          bg = bg1;
+          fg = theme.gray0;
+          bg = theme.bg1;
         };
         "ui.bufferline.active" = {
-          fg = fg0;
-          bg = bg3;
+          fg = theme.fg0;
+          bg = theme.bg3;
           modifiers = ["bold"];
         };
         "ui.popup" = {
-          fg = gray2;
-          bg = bg2;
+          fg = theme.gray2;
+          bg = theme.bg2;
         };
         "ui.window" = {
-          fg = gray0;
-          bg = bg2;
+          fg = theme.gray0;
+          bg = theme.bg2;
         };
         "ui.help" = {
-          fg = fg0;
-          bg = bg2;
+          fg = theme.fg0;
+          bg = theme.bg2;
         };
-        "ui.text" = fg0;
-        "ui.text.focus" = fg0;
+        "ui.text" = theme.fg0;
+        "ui.text.focus" = theme.fg0;
         "ui.menu" = {
-          fg = fg0;
-          bg = bg3;
+          fg = theme.fg0;
+          bg = theme.bg3;
         };
         "ui.menu.selected" = {
-          fg = bg0;
-          bg = blue;
+          fg = theme.bg0;
+          bg = theme.blue;
           modifiers = ["bold"];
         };
-        "ui.virtual.whitespace" = {fg = bg4;};
-        "ui.virtual.indent-guide" = {fg = bg4;};
-        "ui.virtual.ruler" = {bg = bg3;};
+        "ui.virtual.whitespace" = {fg = theme.bg4;};
+        "ui.virtual.indent-guide" = {fg = theme.bg4;};
+        "ui.virtual.ruler" = {bg = theme.bg3;};
 
-        "hint" = blue;
-        "info" = aqua;
-        "warning" = yellow;
-        "error" = red;
+        "hint" = theme.blue;
+        "info" = theme.aqua;
+        "warning" = theme.yellow;
+        "error" = theme.red;
         "diagnostic" = {modifiers = ["underlined"];};
       };
     };
