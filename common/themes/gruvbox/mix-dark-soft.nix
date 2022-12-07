@@ -19,23 +19,23 @@
   gray1 = "#928374";
   gray2 = "#a89984";
 
-  fg0 = "#e2cca9";
-  fg = "#e2cca9";
+  fg0 = "#ddc7a1";
+  fg = "#d4be98";
   fg1 = "#c5b18d";
 
-  red = "#f2594b";
-  orange = "#f28534";
-  yellow = "#e9b143";
-  green = "#b0b846";
-  aqua = "#8bba7f";
-  blue = "#80aa9e";
+  red = "#ea6962";
+  orange = "#e78a4e";
+  yellow = "#d8a657";
+  green = "#a9b665";
+  aqua = "#89b482";
+  blue = "#7daea3";
   purple = "#d3869b";
 
-  dimRed = "#b85651";
-  dimOrange = "#bd6f3e";
-  dimYellow = "#c18f41";
-  dimGreen = "#8f9a52";
-  dimAqua = "#72966c";
-  dimBlue = "#68948a";
-  dimPurple = "#ab6c7d";
+  lightred = "#ec7872";
+  lightorange = "#e8975a";
+  lightyellow = "#daa76b";
+  lightgreen = "#bac76f";
+  lightaqua = "#a2c788";
+  lightblue = "#95c9a6";
+  lightpurple = "#d499af";
 }

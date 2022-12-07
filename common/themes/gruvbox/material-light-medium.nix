@@ -31,11 +31,11 @@
   blue = "#45707a";
   purple = "#945e80";
 
-  dimRed = "#ea6962";
-  dimOrange = "#e78a4e";
-  dimYellow = "#d8a657";
-  dimGreen = "#a9b665";
-  dimAqua = "#89b482";
-  dimBlue = "#7daea3";
-  dimPurple = "#d3869b";
+  lightred = "#cc5a5a";
+  lightorange = "#cf7014";
+  lightyellow = "#c1851e";
+  lightgreen = "#7c8938";
+  lightaqua = "#5c8b6f";
+  lightblue = "#547e87";
+  lightpurple = "#a56e8c";
 }

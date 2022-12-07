@@ -31,11 +31,11 @@
   blue = "#266b79";
   purple = "#924f79";
 
-  lightred = "#B83732";
-  lightorange = "#C16011";
-  lightyellow = "#BD7D16";
-  lightgreen = "#7E8528";
-  lightaqua = "#528265";
-  lightblue = "#2E7787";
-  lightpurple = "#9F5A85";
+  lightred = "#bf3538";
+  lightorange = "#c26112";
+  lightyellow = "#c8841e";
+  lightgreen = "#82872e";
+  lightaqua = "#5a7e6c";
+  lightblue = "#3c7087";
+  lightpurple = "#a35f85";
 }
