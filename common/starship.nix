@@ -7,7 +7,7 @@
 
       character = {
         success_symbol = "[>](bold yellow)[>](bold red)[>](bold blue)";
-        error_symbol = "[>>>](bold red)";
+        error_symbol = "[>>>](bold bright-red)";
       };
 
       directory = {

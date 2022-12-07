@@ -19,16 +19,16 @@
   gray1 = "#928374";
   gray2 = "#a89984";
 
-  fg0 = "#ddc7a1";
-  fg = "#d4be98";
+  fg0 = "#e2cca9";
+  fg = "#e2cca9";
   fg1 = "#c5b18d";
 
-  red = "#ea6962";
-  orange = "#e78a4e";
-  yellow = "#d8a657";
-  green = "#a9b665";
-  aqua = "#89b482";
-  blue = "#7daea3";
+  red = "#f2594b";
+  orange = "#f28534";
+  yellow = "#e9b143";
+  green = "#b0b846";
+  aqua = "#8bba7f";
+  blue = "#80aa9e";
   purple = "#d3869b";
 
   dimRed = "#b85651";

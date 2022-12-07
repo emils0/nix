@@ -2,7 +2,7 @@
   imports = [
     ./bat.nix
     ./fish.nix
-    ./helix
+    ./helix.nix
     ./kitty.nix
     ./starship.nix
     ./wezterm.nix

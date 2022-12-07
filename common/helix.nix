@@ -1,5 +1,5 @@
 let
-  theme = import ./gruvbox/mix-light-medium.nix;
+  theme = import ./themes/gruvbox/mix-light-medium.nix;
 in {
   programs.helix = {
     enable = true;
