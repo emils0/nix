@@ -1,5 +1,5 @@
 let
-  theme = import ./themes/gruvbox/mix-light-medium.nix;
+  theme = import ./themes/gruvbox/material-dark-medium.nix;
 in {
   programs.wezterm = {
     enable = true;

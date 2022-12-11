@@ -15,6 +15,8 @@ in {
     # ./skhd.nix
   ];
 
+  nixpkgs.config.allowUnfree = true;
+
   environment.variables = {EDITOR = "hx";};
 
   users.users.emil.shell = pkgs.fish;

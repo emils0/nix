@@ -67,6 +67,7 @@
     nodePackages.typescript
     nodePackages.typescript-language-server
     nodePackages.svelte-language-server
+    nodePackages.intelephense
     nodePackages.prettier
     nodePackages.mermaid-cli
     nodePackages.vscode-langservers-extracted
