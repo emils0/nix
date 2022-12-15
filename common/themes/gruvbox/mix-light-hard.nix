@@ -1,9 +1,4 @@
 {
-  bg_diff_green = "#dfe1b4";
-  bg_diff_red = "#f7d9b9";
-  bg_visual_blue = "#d3d5b8";
-  bg_visual_yellow = "#f3deaa";
-
   bg0 = "#f2e5bc";
   bg1 = "#f3eac7";
   bg = "#f9f5d7";

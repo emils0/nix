@@ -1,5 +1,5 @@
 let
-  theme = import ./themes/gruvbox/material-dark-medium.nix;
+  theme = import ./themes/gruvbox/material-light-soft.nix;
 in {
   programs.helix.themes = {
     current = let
@@ -37,6 +37,11 @@ in {
       "module" = theme.blue;
       "special" = theme.orange;
 
+      "diff.plus" = theme.lightgreen;
+      "diff.minus" = theme.lightred;
+      "diff.delta" = theme.lightorange;
+      "diff.delta.moved" = theme.lightblue;
+
       "markup.heading.marker" = theme.gray2;
       "markup.heading.1" = {
         fg = theme.red;
@@ -73,10 +78,6 @@ in {
       "markup.quote" = theme.gray2;
       "markup.raw" = theme.green;
 
-      "diff.plus" = theme.green;
-      "diff.delta" = theme.orange;
-      "diff.minus" = theme.red;
-
       "ui.background" = {bg = theme.bg;};
       "ui.background.separator" = theme.gray0;
       "ui.cursor" = {
@@ -89,7 +90,7 @@ in {
       };
       "ui.cursor.match" = {
         fg = theme.orange;
-        bg = theme.bg_visual_yellow;
+        bg = theme.gray2;
       };
       "ui.cursor.insert" = {
         fg = theme.bg0;

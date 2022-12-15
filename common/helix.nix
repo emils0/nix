@@ -11,14 +11,17 @@
       theme = "current";
 
       editor = {
+        auto-save = true;
+        bufferline = "multiple";
         scrolloff = 9;
         idle-timeout = 50;
         completion-trigger-len = 1;
-        gutters = ["diagnostics" "line-numbers"];
+        gutters = ["diagnostics" "line-numbers" "spacer" "diff"];
         true-color = true;
         color-modes = true;
         cursorline = true;
-        line-number = "relative";
+        cursorcolumn = true;
+        line-number = "absolute";
 
         statusline = {
           left = ["mode" "file-name"];
