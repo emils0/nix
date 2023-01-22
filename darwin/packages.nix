@@ -24,6 +24,7 @@
     so
     gitui
     omnisharp-roslyn
+    dotnet-sdk
 
     postgresql
     nodejs
@@ -72,7 +73,6 @@
     nodePackages.mermaid-cli
     nodePackages.vscode-langservers-extracted
     dotnetPackages.Nuget
-    haskellPackages.brittany
 
     (
       let

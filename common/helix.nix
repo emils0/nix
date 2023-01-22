@@ -1,7 +1,7 @@
 {
   imports = [
     ./languages.nix
-    ./syntax.nix
+    ./themes/gruvbox
   ];
 
   programs.helix = {
@@ -16,7 +16,7 @@
         scrolloff = 9;
         idle-timeout = 50;
         completion-trigger-len = 1;
-        gutters = ["diagnostics" "line-numbers" "spacer" "diff"];
+        gutters = ["diff" "diagnostics" "line-numbers"];
         true-color = true;
         color-modes = true;
         cursorline = true;

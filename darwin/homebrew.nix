@@ -21,7 +21,7 @@
     ];
 
     casks = [
-      "dotnet-sdk"
+      # "dotnet-sdk"
 
       # "emacs-app-nightly"
       "eloston-chromium"

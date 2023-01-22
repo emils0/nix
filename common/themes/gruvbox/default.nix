@@ -1,5 +1,5 @@
 let
-  theme = import ./themes/gruvbox/material-light-soft.nix;
+  theme = import ./material-dark-medium.nix;
 in {
   programs.helix.themes = {
     current = let

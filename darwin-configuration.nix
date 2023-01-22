@@ -12,7 +12,7 @@ in {
     "${home-manager}/nix-darwin"
     ./darwin/homebrew.nix
     # ./fish.nix
-    # ./skhd.nix
+    ./darwin/skhd.nix
   ];
 
   nixpkgs.config.allowUnfree = true;
@@ -46,13 +46,17 @@ in {
     ...
   }: {
     imports = [
-      ./darwin/darwin-application-activation.nix
+      # ./darwin/darwin-application-activation.nix
       ./darwin/packages.nix
       ./common
     ];
 
+    programs.home-manager.enable = true;
+
     programs.java.enable = true;
     programs.java.package = pkgs.temurin-bin;
+
+    # disabledModules = ["targets/darwin/linkapps.nix"];
 
     home.stateVersion = "22.11";
     nixpkgs.config.allowUnfree = true;

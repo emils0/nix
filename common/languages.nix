@@ -10,7 +10,7 @@
         tab-width = 4;
         unit = "    ";
       };
-      language-server.command = "jdt-language-server";
+      language-server.command = "jdt-language-server -data ~/.cache/";
     }
 
     {
@@ -95,6 +95,11 @@
 
     {
       name = "c-sharp";
+      auto-format = true;
+    }
+
+    {
+      name = "svelte";
       auto-format = true;
     }
 
