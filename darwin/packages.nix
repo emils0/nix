@@ -25,6 +25,7 @@
     gitui
     omnisharp-roslyn
     dotnet-sdk
+    php
 
     postgresql
     nodejs

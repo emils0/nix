@@ -25,6 +25,7 @@
 
       # "emacs-app-nightly"
       "eloston-chromium"
+      "librewolf"
       "orion"
       "utm"
       "discord"

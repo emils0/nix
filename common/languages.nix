@@ -111,5 +111,11 @@
       };
       auto-format = true;
     }
+
+    {
+      name = "elixir";
+      formatter.command = "mix format";
+      auto-format = true;
+    }
   ];
 }
