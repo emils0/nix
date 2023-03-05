@@ -6,7 +6,6 @@
 
   programs.helix = {
     enable = true;
-    package = helix-master.packages."x86_64-darwin".default;
 
     settings = {
       theme = "current";
