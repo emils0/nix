@@ -19,7 +19,8 @@
     shellInit = ''
       fish_add_path ~/.emacs.d/bin
       fish_add_path ~/.dotnet/tools
-      set EDITOR hx
+      set -x EDITOR hx
+      set -x VISUAL hx
     '';
 
     functions = {
