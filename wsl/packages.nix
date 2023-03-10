@@ -42,6 +42,7 @@
     cargo-edit
     cargo-watch
 
+    python3Packages.pip
     nodePackages.npm
     nodePackages.typescript
     nodePackages.typescript-language-server
