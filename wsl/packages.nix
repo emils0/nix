@@ -27,7 +27,6 @@
     clang-tools
     delve
     rustfmt
-    black
     nixfmt
     pandoc
 
@@ -54,13 +53,16 @@
       let
         my-python-packages = python-packages:
           with python-packages; [
-            jedi
             python-lsp-server
+            jedi
+            python-lsp-black
+            pylsp-mypy
+            pyls-isort
+            pyls-flake8
             pylint
-            flake8
-            rope
-            isort
             mypy
+            rope
+            black
           ];
         python-with-my-packages = python311.withPackages my-python-packages;
       in

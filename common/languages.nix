@@ -15,11 +15,12 @@
 
     {
       name = "python";
-      formatter = {
-        command = "black";
-        args = ["--quiet" "-"];
-      };
       auto-format = true;
+      config.pylsp = {
+        plugins.rope_completion.enabled = true;
+        plugins.rope_autoimport.enabled = true;
+        plugins.flake8.maxLineLength = 88;
+      };
     }
 
     {
@@ -89,7 +90,7 @@
 
     {
       name = "fish";
-      formatter = {command = "fish_indent";};
+      formatter.command = "fish_indent";
       auto-format = true;
     }
 
