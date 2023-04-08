@@ -16,11 +16,16 @@
     {
       name = "python";
       auto-format = true;
-      config.pylsp = {
-        plugins.rope_completion.enabled = true;
-        plugins.rope_autoimport.enabled = true;
-        plugins.flake8.maxLineLength = 88;
+      formatter = {
+        command = "sh";
+        args = ["-c" "black --quiet - | isort -"];
       };
+      language-server = {
+        command = "pyright-langserver";
+        args = ["--stdio"];
+      };
+      config = {};
+      roots = ["pyproject.toml"];
     }
 
     {

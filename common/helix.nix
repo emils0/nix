@@ -43,7 +43,12 @@
           render = true;
         };
 
-        lsp.display-messages = true;
+        soft-wrap.enable = true;
+
+        lsp = {
+          display-messages = true;
+          display-inlay-hints = true;
+        };
       };
     };
   };

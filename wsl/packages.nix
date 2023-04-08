@@ -48,6 +48,7 @@
     nodePackages.svelte-language-server
     nodePackages.prettier
     nodePackages.mermaid-cli
+    nodePackages.pyright
 
     (
       let
