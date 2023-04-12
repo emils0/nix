@@ -1,173 +1,171 @@
 let
-  theme = import ./material-dark-medium.nix;
+  gruvbox = import ./material-dark-medium.nix;
 in {
   programs.helix.themes = {
-    current = let
-      color = theme;
-    in {
-      "type" = theme.blue;
-      "constant" = theme.purple;
-      "constant.builtin" = theme.purple;
-      "constant.character.escape" = theme.yellow;
-      "constant.numeric" = theme.purple;
-      "string" = theme.green;
-      "string.regexp" = theme.blue;
-      "comment" = theme.gray0;
-      "variable" = theme.fg0;
-      "variable.builtin" = theme.purple;
-      "variable.parameter" = theme.fg0;
-      "variable.other.member" = theme.yellow;
-      "label" = theme.aqua;
-      "punctuation" = theme.gray2;
-      "punctuation.delimiter" = theme.gray2;
-      "punctuation.bracket" = theme.gray2;
-      "punctuation.special" = theme.yellow;
-      "keyword" = theme.red;
-      "keyword.directive" = theme.aqua;
-      "keyword.storage.modifier" = theme.orange;
-      "operator" = theme.orange;
-      "function" = theme.green;
-      "function.method" = theme.aqua;
-      "function.builtin" = theme.green;
-      "function.macro" = theme.green;
-      "tag" = theme.yellow;
-      "namespace" = theme.aqua;
-      "attribute" = theme.blue;
-      "constructor" = theme.yellow;
-      "module" = theme.blue;
-      "special" = theme.orange;
+    gruvbox_custom = {
+      "type" = gruvbox.blue;
+      "constant" = gruvbox.purple;
+      "constant.builtin" = gruvbox.purple;
+      "constant.character.escape" = gruvbox.yellow;
+      "constant.numeric" = gruvbox.purple;
+      "string" = gruvbox.green;
+      "string.regexp" = gruvbox.blue;
+      "comment" = gruvbox.gray0;
+      "variable" = gruvbox.fg0;
+      "variable.builtin" = gruvbox.purple;
+      "variable.parameter" = gruvbox.fg0;
+      "variable.other.member" = gruvbox.yellow;
+      "label" = gruvbox.aqua;
+      "punctuation" = gruvbox.gray2;
+      "punctuation.delimiter" = gruvbox.gray2;
+      "punctuation.bracket" = gruvbox.gray2;
+      "punctuation.special" = gruvbox.yellow;
+      "keyword" = gruvbox.red;
+      "keyword.directive" = gruvbox.aqua;
+      "keyword.storage.modifier" = gruvbox.orange;
+      "operator" = gruvbox.orange;
+      "function" = gruvbox.green;
+      "function.method" = gruvbox.aqua;
+      "function.builtin" = gruvbox.green;
+      "function.macro" = gruvbox.green;
+      "tag" = gruvbox.yellow;
+      "namespace" = gruvbox.aqua;
+      "attribute" = gruvbox.blue;
+      "constructor" = gruvbox.yellow;
+      "module" = gruvbox.blue;
+      "special" = gruvbox.orange;
 
-      "diff.plus" = theme.lightgreen;
-      "diff.minus" = theme.lightred;
-      "diff.delta" = theme.lightorange;
-      "diff.delta.moved" = theme.lightblue;
+      "diff.plus" = gruvbox.lightgreen;
+      "diff.minus" = gruvbox.lightred;
+      "diff.delta" = gruvbox.lightorange;
+      "diff.delta.moved" = gruvbox.lightblue;
 
-      "markup.heading.marker" = theme.gray2;
+      "markup.heading.marker" = gruvbox.gray2;
       "markup.heading.1" = {
-        fg = theme.red;
+        fg = gruvbox.red;
         modifiers = ["bold"];
       };
       "markup.heading.2" = {
-        fg = theme.orange;
+        fg = gruvbox.orange;
         modifiers = ["bold"];
       };
       "markup.heading.3" = {
-        fg = theme.yellow;
+        fg = gruvbox.yellow;
         modifiers = ["bold"];
       };
       "markup.heading.4" = {
-        fg = theme.green;
+        fg = gruvbox.green;
         modifiers = ["bold"];
       };
       "markup.heading.5" = {
-        fg = theme.blue;
+        fg = gruvbox.blue;
         modifiers = ["bold"];
       };
       "markup.heading.6" = {
-        fg = theme.fg0;
+        fg = gruvbox.fg0;
         modifiers = ["bold"];
       };
-      "markup.list" = theme.red;
+      "markup.list" = gruvbox.red;
       "markup.bold" = {modifiers = ["bold"];};
       "markup.italic" = {modifiers = ["italic"];};
       "markup.link.url" = {
-        fg = theme.blue;
+        fg = gruvbox.blue;
         modifiers = ["underlined"];
       };
-      "markup.link.text" = theme.purple;
-      "markup.quote" = theme.gray2;
-      "markup.raw" = theme.green;
+      "markup.link.text" = gruvbox.purple;
+      "markup.quote" = gruvbox.gray2;
+      "markup.raw" = gruvbox.green;
 
-      "ui.background" = {bg = theme.bg;};
-      "ui.background.separator" = theme.gray0;
+      "ui.background" = {bg = gruvbox.bg;};
+      "ui.background.separator" = gruvbox.gray0;
       "ui.cursor" = {
-        fg = theme.bg0;
-        bg = theme.fg1;
+        fg = gruvbox.bg0;
+        bg = gruvbox.fg1;
       };
       "ui.cursor.primary" = {
-        fg = theme.bg0;
-        bg = theme.fg0;
+        fg = gruvbox.bg0;
+        bg = gruvbox.fg0;
       };
       "ui.cursor.match" = {
-        fg = theme.orange;
-        bg = theme.gray2;
+        fg = gruvbox.orange;
+        bg = gruvbox.gray2;
       };
       "ui.cursor.insert" = {
-        fg = theme.bg0;
-        bg = theme.gray2;
+        fg = gruvbox.bg0;
+        bg = gruvbox.gray2;
       };
       "ui.cursor.select" = {
-        fg = theme.bg0;
-        bg = theme.blue;
+        fg = gruvbox.bg0;
+        bg = gruvbox.blue;
       };
-      "ui.cursorline.primary" = {bg = theme.bg4;};
-      "ui.cursorline.secondary" = {bg = theme.bg;};
-      "ui.selection" = {bg = theme.bg3;};
-      "ui.linenr" = theme.gray0;
-      "ui.linenr.selected" = theme.fg0;
+      "ui.cursorline.primary" = {bg = gruvbox.bg4;};
+      "ui.cursorline.secondary" = {bg = gruvbox.bg;};
+      "ui.selection" = {bg = gruvbox.bg3;};
+      "ui.linenr" = gruvbox.gray0;
+      "ui.linenr.selected" = gruvbox.fg0;
       "ui.statusline" = {
-        fg = theme.fg0;
-        bg = theme.bg3;
+        fg = gruvbox.fg0;
+        bg = gruvbox.bg3;
       };
       "ui.statusline.inactive" = {
-        fg = theme.gray0;
-        bg = theme.bg2;
+        fg = gruvbox.gray0;
+        bg = gruvbox.bg2;
       };
       "ui.statusline.normal" = {
-        fg = theme.bg0;
-        bg = theme.fg0;
+        fg = gruvbox.bg0;
+        bg = gruvbox.fg0;
         modifiers = ["bold"];
       };
       "ui.statusline.insert" = {
-        fg = theme.bg0;
-        bg = theme.yellow;
+        fg = gruvbox.bg0;
+        bg = gruvbox.yellow;
         modifiers = ["bold"];
       };
       "ui.statusline.select" = {
-        fg = theme.bg0;
-        bg = theme.blue;
+        fg = gruvbox.bg0;
+        bg = gruvbox.blue;
         modifiers = ["bold"];
       };
       "ui.bufferline" = {
-        fg = theme.gray0;
-        bg = theme.bg1;
+        fg = gruvbox.gray0;
+        bg = gruvbox.bg1;
       };
       "ui.bufferline.active" = {
-        fg = theme.fg0;
-        bg = theme.bg3;
+        fg = gruvbox.fg0;
+        bg = gruvbox.bg3;
         modifiers = ["bold"];
       };
       "ui.popup" = {
-        fg = theme.gray2;
-        bg = theme.bg2;
+        fg = gruvbox.gray2;
+        bg = gruvbox.bg2;
       };
       "ui.window" = {
-        fg = theme.gray0;
-        bg = theme.bg2;
+        fg = gruvbox.gray0;
+        bg = gruvbox.bg2;
       };
       "ui.help" = {
-        fg = theme.fg0;
-        bg = theme.bg2;
+        fg = gruvbox.fg0;
+        bg = gruvbox.bg2;
       };
-      "ui.text" = theme.fg0;
-      "ui.text.focus" = theme.fg0;
+      "ui.text" = gruvbox.fg0;
+      "ui.text.focus" = gruvbox.fg0;
       "ui.menu" = {
-        fg = theme.fg0;
-        bg = theme.bg3;
+        fg = gruvbox.fg0;
+        bg = gruvbox.bg3;
       };
       "ui.menu.selected" = {
-        fg = theme.bg0;
-        bg = theme.blue;
+        fg = gruvbox.bg0;
+        bg = gruvbox.blue;
         modifiers = ["bold"];
       };
-      "ui.virtual.whitespace" = {fg = theme.bg4;};
-      "ui.virtual.indent-guide" = {fg = theme.bg4;};
-      "ui.virtual.ruler" = {bg = theme.bg3;};
+      "ui.virtual.whitespace" = {fg = gruvbox.bg4;};
+      "ui.virtual.indent-guide" = {fg = gruvbox.bg4;};
+      "ui.virtual.ruler" = {bg = gruvbox.bg3;};
 
-      "hint" = theme.blue;
-      "info" = theme.aqua;
-      "warning" = theme.yellow;
-      "error" = theme.red;
+      "hint" = gruvbox.blue;
+      "info" = gruvbox.aqua;
+      "warning" = gruvbox.yellow;
+      "error" = gruvbox.red;
       "diagnostic" = {modifiers = ["underlined"];};
     };
   };

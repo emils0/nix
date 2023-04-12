@@ -20,7 +20,7 @@
     dotnet-sdk
 
     nodejs
-    rnix-lsp
+    nil
     sqls
     rust-analyzer
     jsonnet
@@ -54,15 +54,7 @@
       let
         my-python-packages = python-packages:
           with python-packages; [
-            python-lsp-server
-            jedi
-            python-lsp-black
-            pylsp-mypy
-            pyls-isort
-            pyls-flake8
-            pylint
-            mypy
-            rope
+            isort
             black
           ];
         python-with-my-packages = python311.withPackages my-python-packages;

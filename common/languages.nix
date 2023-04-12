@@ -115,6 +115,7 @@
         command = "alejandra";
         args = ["--quiet"];
       };
+      language-server.command = "nil";
       auto-format = true;
     }
 

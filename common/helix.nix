@@ -8,7 +8,7 @@
     enable = true;
 
     settings = {
-      theme = "current";
+      theme = "gruvbox_custom";
 
       editor = {
         auto-save = true;
@@ -41,6 +41,7 @@
 
         indent-guides = {
           render = true;
+          skip-levels = 1;
         };
 
         soft-wrap.enable = true;
@@ -48,6 +49,13 @@
         lsp = {
           display-messages = true;
           display-inlay-hints = true;
+        };
+      };
+
+      keys = {
+        normal = {
+          g.l = "extend_to_line_end";
+          g.h = "extend_to_line_start";
         };
       };
     };
