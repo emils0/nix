@@ -1,5 +1,5 @@
 let
-  gruvbox = import ./material-dark-medium.nix;
+  gruvbox = import ./material-light-soft.nix;
 in {
   programs.helix.themes = {
     gruvbox_custom = {

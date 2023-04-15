@@ -51,13 +51,6 @@
           display-inlay-hints = true;
         };
       };
-
-      keys = {
-        normal = {
-          g.l = "extend_to_line_end";
-          g.h = "extend_to_line_start";
-        };
-      };
     };
   };
 }
