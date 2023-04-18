@@ -23,6 +23,7 @@
     nil
     sqls
     rust-analyzer
+    omnisharp-roslyn
     jsonnet
     clang-tools
     delve
