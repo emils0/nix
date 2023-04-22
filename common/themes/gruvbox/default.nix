@@ -161,6 +161,7 @@ in {
       "ui.virtual.whitespace" = {fg = gruvbox.bg4;};
       "ui.virtual.indent-guide" = {fg = gruvbox.bg4;};
       "ui.virtual.ruler" = {bg = gruvbox.bg3;};
+      "ui.virtual.inlay-hint" = {fg = gruvbox.gray0;};
 
       "hint" = gruvbox.blue;
       "info" = gruvbox.aqua;

@@ -31,7 +31,10 @@
     nixfmt
     pandoc
 
+    clang
     cargo
+
+    zstd
     gradle
     gnumake
     cmake
