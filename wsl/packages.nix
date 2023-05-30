@@ -30,6 +30,7 @@
     rustfmt
     nixfmt
     pandoc
+    terminal-typeracer
 
     clang
     cargo
