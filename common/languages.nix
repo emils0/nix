@@ -1,5 +1,5 @@
 {
-  programs.helix.languages = [
+  programs.helix.languages.language = [
     {
       name = "java";
       scope = "source.java";
@@ -25,7 +25,7 @@
         args = ["--stdio"];
       };
       config = {};
-      roots = ["pyproject.toml"];
+      roots = ["pyproject.toml" "setup.py" "Poetry.lock" "."];
     }
 
     {
