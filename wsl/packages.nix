@@ -18,6 +18,7 @@
     fd
     so
     dotnet-sdk
+    gnuplot
 
     nodejs
     nil
@@ -31,11 +32,15 @@
     nixfmt
     pandoc
     terminal-typeracer
+    kalker
 
     clang
     cargo
+    cargo-tauri
+    cargo-criterion
 
     zstd
+    pkg-config
     gradle
     gnumake
     cmake

@@ -22,7 +22,7 @@
       };
       language-server = {
         command = "pyright-langserver";
-        args = ["--stdio"];
+        args = ["--stdio" "--lib"];
       };
       config = {};
       roots = ["pyproject.toml" "setup.py" "Poetry.lock" "."];

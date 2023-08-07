@@ -21,6 +21,7 @@
       fish_add_path ~/.dotnet/tools
       set -x EDITOR hx
       set -x VISUAL hx
+      set -x SUDO_EDITOR hx
     '';
 
     functions = {

@@ -10,6 +10,10 @@
     settings = {
       theme = "gruvbox_custom";
 
+      keys.normal = {
+        C-r = ":reset-diff-change";
+      };
+
       editor = {
         auto-save = true;
         bufferline = "multiple";
