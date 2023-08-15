@@ -18,12 +18,16 @@
       "poppler"
       "automake"
       "libtool"
+
+      # temporary
+      "rustfmt"
     ];
 
     casks = [
       # "dotnet-sdk"
 
       # "emacs-app-nightly"
+      "brave-browser"
       "eloston-chromium"
       "librewolf"
       "orion"
@@ -37,6 +41,10 @@
       "mactex-no-gui"
       "metasploit"
       "insomnia"
+      "keepassxc"
+      "microsoft-teams"
+      "wezterm"
+      "dotnet-sdk"
     ];
 
     masApps = {Amphetamine = 937984704;};

@@ -21,6 +21,8 @@ in {
     experimental-features = nix-command flakes
   '';
 
+  nix.settings.trusted-users = ["Emil" "root"];
+
   services.nix-daemon.enable = true;
   system.stateVersion = 4;
 

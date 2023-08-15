@@ -4,52 +4,40 @@
     git-ignore
     comma
     cachix
-    aspell
-    aspellDicts.en
-    aspellDicts.da
     exa
-    fzf
     ripgrep
     wget
     unzip
-    killall
     bottom
     yt-dlp
-    ffmpeg
     curl
+    ffmpeg
     git
     gnupg
     asciinema
     fd
     so
-    gitui
-    omnisharp-roslyn
-    dotnet-sdk
-    php
+    gnuplot
 
-    postgresql
     nodejs
-    rnix-lsp
+    nil
     sqls
     rust-analyzer
-    jdt-language-server
+    omnisharp-roslyn
     jsonnet
-    kotlin-language-server
-    ktlint
-    gopls
-    google-java-format
     clang-tools
     delve
     rustfmt
-    black
     nixfmt
     pandoc
-    plantuml
-    httpie
-    exercism
+    terminal-typeracer
+    kalker
 
     lua
+    clang
     cargo
+    cargo-tauri
+    cargo-criterion
     gradle
     gnumake
     cmake
@@ -57,6 +45,7 @@
     kotlin
     kotlin-native
     rustc
+    sqlx-cli
     go
     clippy
     cargo-edit
@@ -64,30 +53,23 @@
     openssl_3_0
     zld
 
+    python3Packages.pip
     nodePackages.npm
-    nodePackages.degit
     nodePackages.typescript
     nodePackages.typescript-language-server
     nodePackages.svelte-language-server
-    nodePackages.intelephense
     nodePackages.prettier
     nodePackages.mermaid-cli
-    nodePackages.vscode-langservers-extracted
-    dotnetPackages.Nuget
+    nodePackages.pyright
 
     (
       let
         my-python-packages = python-packages:
           with python-packages; [
-            jedi
-            python-lsp-server
-            pylint
-            flake8
-            rope
             isort
-            mypy
+            black
           ];
-        python-with-my-packages = python3.withPackages my-python-packages;
+        python-with-my-packages = python311.withPackages my-python-packages;
       in
         python-with-my-packages
     )
