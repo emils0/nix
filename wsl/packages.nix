@@ -4,7 +4,6 @@
     git-ignore
     comma
     cachix
-    exa
     ripgrep
     wget
     unzip

@@ -17,7 +17,7 @@
     ./wsl/packages.nix
   ];
 
-  programs.exa.enable = true;
+  programs.eza.enable = true;
 
   programs.zoxide = {
     enable = true;
