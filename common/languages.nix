@@ -1,128 +1,139 @@
 {
-  programs.helix.languages.language = [
-    {
-      name = "java";
-      scope = "source.java";
-      injection-regex = "java";
-      file-types = ["java"];
-      roots = ["pom.xml" "build.gradle"];
-      indent = {
-        tab-width = 4;
-        unit = "    ";
-      };
-      language-server.command = "jdt-language-server -data ~/.cache/";
-    }
+  programs.helix.languages = {
+    language-server = {
+      # java
+      jdt.command = "jdt-language-server -data ~/.cache/";
 
-    {
-      name = "python";
-      auto-format = true;
-      formatter = {
-        command = "sh";
-        args = ["-c" "black --quiet - | isort -"];
-      };
-      language-server = {
+      # python
+      pyright = {
         command = "pyright-langserver";
         args = ["--stdio" "--lib"];
+        config = {};
       };
-      config = {};
-      roots = ["pyproject.toml" "setup.py" "Poetry.lock" "."];
-    }
 
-    {
-      name = "html";
-      formatter = {
-        command = "prettier";
-        args = ["--parser" "html"];
-      };
-    }
+      ruff.command = "ruff-lsp";
 
-    {
-      name = "json";
-      formatter = {
-        command = "prettier";
-        args = ["--parser" "json"];
-      };
-    }
+      # nix
+      nil.command = "nil";
+    };
 
-    {
-      name = "css";
-      formatter = {
-        command = "prettier";
-        args = ["--parser" "css"];
-      };
-      auto-format = true;
-    }
+    language = [
+      {
+        name = "java";
+        scope = "source.java";
+        injection-regex = "java";
+        file-types = ["java"];
+        roots = ["pom.xml" "build.gradle"];
+        indent = {
+          tab-width = 4;
+          unit = "    ";
+        };
+        language-servers = ["jdt"];
+      }
 
-    {
-      name = "javascript";
-      formatter = {
-        command = "prettier";
-        args = ["--parser" "typescript"];
-      };
-      auto-format = true;
-    }
+      {
+        name = "python";
+        auto-format = true;
+        language-servers = ["ruff" "pyright"];
+        roots = ["pyproject.toml" "setup.py" "Poetry.lock" "."];
+      }
 
-    {
-      name = "typescript";
-      formatter = {
-        command = "prettier";
-        args = ["--parser" "typescript"];
-      };
-      auto-format = true;
-    }
+      {
+        name = "html";
+        formatter = {
+          command = "prettier";
+          args = ["--parser" "html"];
+        };
+      }
 
-    {
-      name = "markdown";
-      formatter = {
-        command = "prettier";
-        args = ["--parser" "markdown"];
-      };
-      auto-format = true;
-    }
+      {
+        name = "json";
+        formatter = {
+          command = "prettier";
+          args = ["--parser" "json"];
+        };
+      }
 
-    {
-      name = "bash";
-      indent = {
-        tab-width = 4;
-        unit = "    ";
-      };
-      formatter = {
-        command = "shfmt";
-        args = ["-i" "4"];
-      };
-      auto-format = true;
-    }
+      {
+        name = "css";
+        formatter = {
+          command = "prettier";
+          args = ["--parser" "css"];
+        };
+        auto-format = true;
+      }
 
-    {
-      name = "fish";
-      formatter.command = "fish_indent";
-      auto-format = true;
-    }
+      {
+        name = "javascript";
+        formatter = {
+          command = "prettier";
+          args = ["--parser" "typescript"];
+        };
+        auto-format = true;
+      }
 
-    {
-      name = "c-sharp";
-      auto-format = true;
-    }
+      {
+        name = "typescript";
+        formatter = {
+          command = "prettier";
+          args = ["--parser" "typescript"];
+        };
+        auto-format = true;
+      }
 
-    {
-      name = "svelte";
-      auto-format = true;
-    }
+      {
+        name = "markdown";
+        formatter = {
+          command = "prettier";
+          args = ["--parser" "markdown"];
+        };
+        auto-format = true;
+      }
 
-    {
-      name = "nix";
-      formatter = {
-        command = "alejandra";
-        args = ["--quiet"];
-      };
-      language-server.command = "nil";
-      auto-format = true;
-    }
+      {
+        name = "bash";
+        indent = {
+          tab-width = 4;
+          unit = "    ";
+        };
+        formatter = {
+          command = "shfmt";
+          args = ["-i" "4"];
+        };
+        auto-format = true;
+      }
 
-    {
-      name = "elixir";
-      formatter.command = "mix format";
-      auto-format = true;
-    }
-  ];
+      {
+        name = "fish";
+        formatter.command = "fish_indent";
+        auto-format = true;
+      }
+
+      {
+        name = "c-sharp";
+        auto-format = true;
+      }
+
+      {
+        name = "svelte";
+        auto-format = true;
+      }
+
+      {
+        name = "nix";
+        formatter = {
+          command = "alejandra";
+          args = ["--quiet"];
+        };
+        language-servers = ["nil"];
+        auto-format = true;
+      }
+
+      {
+        name = "elixir";
+        formatter.command = "mix format";
+        auto-format = true;
+      }
+    ];
+  };
 }

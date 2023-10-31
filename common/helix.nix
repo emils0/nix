@@ -1,4 +1,4 @@
-{
+{pkgs, ...}: {
   imports = [
     ./languages.nix
     ./themes/gruvbox
@@ -56,5 +56,7 @@
         };
       };
     };
+
+    extraPackages = [pkgs.marksman pkgs.ruff pkgs.pylyzer];
   };
 }
