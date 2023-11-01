@@ -2,7 +2,7 @@
   programs.helix.languages = {
     language-server = {
       # java
-      jdt.command = "jdt-language-server -data ~/.cache/";
+      jdt.command = "jdt-language-server";
 
       # python
       pyright = {
@@ -15,6 +15,9 @@
 
       # nix
       nil.command = "nil";
+
+      # writing
+      ltex.command = "ltex-ls";
     };
 
     language = [
@@ -87,6 +90,7 @@
           command = "prettier";
           args = ["--parser" "markdown"];
         };
+        language-servers = ["ltex"];
         auto-format = true;
       }
 
