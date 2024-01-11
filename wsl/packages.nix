@@ -50,7 +50,6 @@
     cargo-edit
     cargo-watch
     # pylyzer
-    ruff
 
     python3Packages.pip
     nodePackages.npm

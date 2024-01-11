@@ -7,7 +7,12 @@
   programs.helix = {
     enable = true;
 
-    extraPackages = with pkgs; [marksman ltex-ls];
+    extraPackages = with pkgs; [
+      marksman
+      ltex-ls
+      taplo
+      ruff-lsp
+    ];
   };
 
   programs.helix.settings = {

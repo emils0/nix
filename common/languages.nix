@@ -37,7 +37,16 @@
       {
         name = "python";
         auto-format = true;
-        language-servers = ["ruff" "pyright"];
+        language-servers = [
+          {
+            name = "ruff";
+            only-features = ["format" "diagnostics" "code-action"];
+          }
+          {
+            name = "pyright";
+            except-features = ["format"];
+          }
+        ];
         roots = ["pyproject.toml" "setup.py" "Poetry.lock" "."];
       }
 
@@ -90,7 +99,7 @@
           command = "prettier";
           args = ["--parser" "markdown"];
         };
-        language-servers = ["ltex"];
+        language-servers = ["marksman"];
         auto-format = true;
       }
 
