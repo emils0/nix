@@ -12,6 +12,8 @@
       ltex-ls
       taplo
       ruff-lsp
+      wsl-open
+      csharp-ls
     ];
   };
 
@@ -20,6 +22,7 @@
 
     keys.normal = {
       C-r = ":reset-diff-change";
+      g.x = ":pipe-to xargs wsl-open";
       Z.Z = ":wq";
     };
   };

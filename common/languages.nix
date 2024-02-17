@@ -125,6 +125,7 @@
       {
         name = "c-sharp";
         auto-format = true;
+        language-servers = ["csharp-ls"];
       }
 
       {

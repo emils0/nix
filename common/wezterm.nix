@@ -29,7 +29,7 @@ in {
       ];
 
       tab_bar = {
-        background = theme.bg1;
+        # background = theme.bg1;
 
         active_tab = {
           bg_color = theme.bg0;

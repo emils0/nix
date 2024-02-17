@@ -76,7 +76,7 @@ in {
       "markup.quote" = gruvbox.gray2;
       "markup.raw" = gruvbox.green;
 
-      "ui.background" = {bg = gruvbox.bg;};
+      # "ui.background" = {bg = gruvbox.bg;};
       "ui.background.separator" = gruvbox.gray0;
       "ui.cursor" = {
         fg = gruvbox.bg0;
