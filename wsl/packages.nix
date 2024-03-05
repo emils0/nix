@@ -18,8 +18,12 @@
     so
     dotnet-sdk
     gnuplot
+    podman
+    slirp4netns
+    su
 
-    nodejs
+    ruff
+    bun
     nil
     sqls
     rust-analyzer
@@ -59,6 +63,7 @@
     nodePackages.prettier
     nodePackages.mermaid-cli
     nodePackages.pyright
+    nodePackages."@angular/cli"
 
     (
       let
