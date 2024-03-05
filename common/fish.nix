@@ -2,13 +2,13 @@
   programs.fish = {
     enable = true;
     shellAliases = {
-      ls = "exa -G -s extension --icons";
-      la = "exa -aG -s extension --icons";
+      ls = "eza -G --hyperlink -s extension --icons";
+      la = "eza -aG --hyperlink -s extension --icons";
 
-      ll = "exa -lG -s extension --icons";
-      lla = "exa -laG -s extension --icons";
-      lt = "exa -GT -s extension --icons";
-      lat = "exa -aGT -s extension --icons";
+      ll = "eza -lG --hyperlink -s extension --icons";
+      lla = "eza -laG --hyperlink -s extension --icons";
+      lt = "eza -GT --hyperlink -s extension --icons";
+      lat = "eza -aGT --hyperlink -s extension --icons";
 
       ".." = "s ..";
       "..." = "s ../..";

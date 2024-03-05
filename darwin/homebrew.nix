@@ -8,19 +8,21 @@
     brews = [
       # "yabai"
       "aspell"
-      "gcc"
-      "libgccjit"
-      "pyqt"
+      # "gcc"
+      # "libgccjit"
+      # "pyqt"
       "coreutils"
-      "gdb"
+      # "gdb"
       "texlab"
-      "pkg-config"
-      "poppler"
+      # "pkg-config"
+      # "poppler"
       "automake"
       "libtool"
+      "cocoapods"
+      "firebase-cli"
 
       # temporary
-      "rustfmt"
+      # "rustfmt"
     ];
 
     casks = [
@@ -28,6 +30,7 @@
 
       # "emacs-app-nightly"
       "brave-browser"
+      "firefox-developer-edition"
       "eloston-chromium"
       "librewolf"
       "orion"
@@ -45,16 +48,21 @@
       "microsoft-teams"
       "wezterm"
       "dotnet-sdk"
+      "mongodb-compass"
+
+      "android-studio"
+      "flutter"
     ];
 
     masApps = {Amphetamine = 937984704;};
 
     taps = [
       "homebrew/services"
-      "homebrew/cask"
+      # "homebrew/cask"
       "homebrew/cask-versions"
       # "jimeh/emacs-builds"
       "koekeishiya/formulae"
+      # dart-lang/dart
     ];
   };
 }

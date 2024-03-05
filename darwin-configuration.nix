@@ -69,6 +69,8 @@ in {
       enable = true;
       options = ["--cmd s"];
     };
+
+    home.file.".config/tridactyl/tridactylrc".source = ./tridactylrc;
   };
 
   fonts.fontDir.enable = true;

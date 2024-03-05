@@ -4,9 +4,10 @@
     git-ignore
     comma
     cachix
-    exa
+    eza
     ripgrep
     wget
+    aria
     unzip
     bottom
     yt-dlp
@@ -20,6 +21,7 @@
     gnuplot
 
     nodejs
+    bun
     nil
     sqls
     rust-analyzer
@@ -32,12 +34,15 @@
     pandoc
     terminal-typeracer
     kalker
+    mongosh
 
     lua
     clang
     cargo
-    cargo-tauri
+    # cargo-cross
+    # cargo-tauri
     cargo-criterion
+    sea-orm-cli
     gradle
     gnumake
     cmake
@@ -61,6 +66,7 @@
     nodePackages.prettier
     nodePackages.mermaid-cli
     nodePackages.pyright
+    nodePackages."@angular/cli"
 
     (
       let

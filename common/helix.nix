@@ -13,7 +13,6 @@
       taplo
       ruff-lsp
       wsl-open
-      csharp-ls
     ];
   };
 
