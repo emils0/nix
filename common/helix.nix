@@ -14,6 +14,8 @@
       ruff-lsp
       wsl-open
       csharp-ls
+      dockerfile-language-server-nodejs
+      dockfmt
     ];
   };
 

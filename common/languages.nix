@@ -14,7 +14,17 @@
       ruff.command = "ruff-lsp";
 
       # nix
-      nil.command = "nil";
+      nil = {
+        command = "nil";
+        config.nil = {
+          formatting.command = ["alejandra"];
+          nix = {
+            maxMemoryMB = 5120;
+            flake.autoArchive = true;
+            flake.autoEvalInputs = true;
+          };
+        };
+      };
 
       # writing
       ltex.command = "ltex-ls";
@@ -135,10 +145,6 @@
 
       {
         name = "nix";
-        formatter = {
-          command = "alejandra";
-          args = ["--quiet"];
-        };
         language-servers = ["nil"];
         auto-format = true;
       }
@@ -146,6 +152,12 @@
       {
         name = "elixir";
         formatter.command = "mix format";
+        auto-format = true;
+      }
+
+      {
+        name = "dockerfile";
+        formatter.command = "dockfmt fmt";
         auto-format = true;
       }
     ];
