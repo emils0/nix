@@ -23,6 +23,7 @@
 
       # temporary
       # "rustfmt"
+      "dart"
     ];
 
     casks = [
@@ -31,8 +32,6 @@
       # "emacs-app-nightly"
       "brave-browser"
       "firefox-developer-edition"
-      "eloston-chromium"
-      "librewolf"
       "orion"
       "utm"
       "discord"
@@ -41,15 +40,13 @@
       "steam"
       "transmission"
       "element"
-      "mactex-no-gui"
-      "metasploit"
-      "insomnia"
       "keepassxc"
       "microsoft-teams"
       "wezterm"
       "dotnet-sdk"
       "mongodb-compass"
 
+      "android-platform-tools"
       "android-studio"
       "flutter"
     ];
@@ -62,7 +59,7 @@
       "homebrew/cask-versions"
       # "jimeh/emacs-builds"
       "koekeishiya/formulae"
-      # dart-lang/dart
+      "dart-lang/dart"
     ];
   };
 }

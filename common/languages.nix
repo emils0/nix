@@ -28,6 +28,13 @@
 
       # writing
       ltex.command = "ltex-ls";
+
+      # dart
+      dart = {
+        command = "dart";
+        args = ["language-server" "--client-id=helix"];
+        config.closingLabels = true;
+      };
     };
 
     language = [
