@@ -76,8 +76,8 @@ in {
       "markup.quote" = gruvbox.gray2;
       "markup.raw" = gruvbox.green;
 
-      # "ui.background" = {bg = gruvbox.bg;};
       "ui.background.separator" = gruvbox.gray0;
+
       "ui.cursor" = {
         fg = gruvbox.bg0;
         bg = gruvbox.fg1;
@@ -98,11 +98,15 @@ in {
         fg = gruvbox.bg0;
         bg = gruvbox.blue;
       };
+
       "ui.cursorline.primary" = {bg = gruvbox.bg4;};
       "ui.cursorline.secondary" = {bg = gruvbox.bg;};
+
       "ui.selection" = {bg = gruvbox.bg3;};
+
       "ui.linenr" = gruvbox.gray0;
       "ui.linenr.selected" = gruvbox.fg0;
+
       "ui.statusline" = {
         fg = gruvbox.fg0;
         bg = gruvbox.bg3;
@@ -113,19 +117,20 @@ in {
       };
       "ui.statusline.normal" = {
         fg = gruvbox.bg0;
-        bg = gruvbox.fg0;
+        bg = gruvbox.blue;
         modifiers = ["bold"];
       };
       "ui.statusline.insert" = {
         fg = gruvbox.bg0;
-        bg = gruvbox.yellow;
+        bg = gruvbox.green;
         modifiers = ["bold"];
       };
       "ui.statusline.select" = {
         fg = gruvbox.bg0;
-        bg = gruvbox.blue;
+        bg = gruvbox.purple;
         modifiers = ["bold"];
       };
+
       "ui.bufferline" = {
         fg = gruvbox.gray0;
         bg = gruvbox.bg1;
@@ -135,6 +140,7 @@ in {
         bg = gruvbox.bg3;
         modifiers = ["bold"];
       };
+
       "ui.popup" = {
         fg = gruvbox.gray2;
         bg = gruvbox.bg2;
@@ -147,8 +153,10 @@ in {
         fg = gruvbox.fg0;
         bg = gruvbox.bg2;
       };
+
       "ui.text" = gruvbox.fg0;
       "ui.text.focus" = gruvbox.fg0;
+
       "ui.menu" = {
         fg = gruvbox.fg0;
         bg = gruvbox.bg3;
@@ -158,10 +166,20 @@ in {
         bg = gruvbox.blue;
         modifiers = ["bold"];
       };
+      "ui.menu.scroll" = {
+        fg = gruvbox.fg1;
+        bg = gruvbox.bg;
+      };
+
       "ui.virtual.whitespace" = {fg = gruvbox.bg4;};
       "ui.virtual.indent-guide" = {fg = gruvbox.bg4;};
       "ui.virtual.ruler" = {bg = gruvbox.bg3;};
       "ui.virtual.inlay-hint" = {fg = gruvbox.gray0;};
+      "ui.virtual.jump-label" = {
+        bg = gruvbox.purple;
+        fg = gruvbox.bg0;
+        modifiers = ["bold"];
+      };
 
       "hint" = gruvbox.blue;
       "info" = gruvbox.aqua;

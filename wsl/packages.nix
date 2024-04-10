@@ -32,7 +32,6 @@
     clang-tools
     delve
     rustfmt
-    nixfmt
     pandoc
     terminal-typeracer
     kalker

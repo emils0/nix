@@ -30,7 +30,6 @@
   };
 
   programs.helix.settings.editor = {
-    auto-save = true;
     bufferline = "multiple";
     scrolloff = 9;
     idle-timeout = 50;
@@ -41,11 +40,18 @@
     cursorline = true;
     cursorcolumn = true;
     line-number = "absolute";
+    popup-border = "none";
 
     statusline = {
-      left = ["mode" "file-name"];
-      center = ["diagnostics" "spinner"];
-      right = ["position" "selections"];
+      left = ["mode" "file-name" "read-only-indicator" "file-modification-indicator"];
+      center = ["register" "diagnostics" "spinner"];
+      right = ["version-control" "position" "selections"];
+
+      mode = {
+        normal = "NORMAL";
+        insert = "INSERT";
+        select = "SELECT";
+      };
     };
 
     cursor-shape = {
@@ -69,5 +75,7 @@
       display-messages = true;
       display-inlay-hints = true;
     };
+
+    jump-label-alphabet = "tnseriaodhgmwyfuplvk";
   };
 }
