@@ -1,6 +1,14 @@
-{
+let
+  copilot_key = builtins.readFile ./.copilot_key;
+in {
   programs.helix.languages = {
     language-server = {
+      # helix-gpt
+      gpt = {
+        command = "helix-gpt";
+        args = ["--handler" "copilot" "--copilotApiKey" copilot_key];
+      };
+
       # java
       jdt.command = "jdt-language-server";
 
@@ -63,6 +71,7 @@
             name = "pyright";
             except-features = ["format"];
           }
+          # "gpt"
         ];
         roots = ["pyproject.toml" "setup.py" "Poetry.lock" "."];
       }
