@@ -21,6 +21,7 @@
     podman
     slirp4netns
     su
+    helix-gpt
 
     ruff
     bun
