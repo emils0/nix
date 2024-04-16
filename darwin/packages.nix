@@ -39,8 +39,6 @@
     lua
     clang
     cargo
-    # cargo-cross
-    # cargo-tauri
     cargo-criterion
     sea-orm-cli
     gradle

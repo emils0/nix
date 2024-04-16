@@ -24,6 +24,7 @@
       # temporary
       # "rustfmt"
       "dart"
+      "arduino-cli"
     ];
 
     casks = [
@@ -49,6 +50,7 @@
       "android-platform-tools"
       "android-studio"
       "flutter"
+      "arduino-ide"
     ];
 
     masApps = {Amphetamine = 937984704;};
