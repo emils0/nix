@@ -28,6 +28,7 @@
     nil
     sqls
     rust-analyzer
+    pyright
     omnisharp-roslyn
     jsonnet
     clang-tools
@@ -62,7 +63,6 @@
     nodePackages.svelte-language-server
     nodePackages.prettier
     nodePackages.mermaid-cli
-    nodePackages.pyright
     nodePackages."@angular/cli"
 
     (

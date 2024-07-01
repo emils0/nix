@@ -30,6 +30,7 @@
   };
 
   programs.helix.settings.editor = {
+    shell = ["nu" "--stdin" "-c"];
     bufferline = "multiple";
     scrolloff = 9;
     idle-timeout = 50;
@@ -76,6 +77,6 @@
       display-inlay-hints = true;
     };
 
-    jump-label-alphabet = "tnseriaodhgmwyfuplvk";
+    jump-label-alphabet = "ntesiroahdmgywuflpkv";
   };
 }

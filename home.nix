@@ -8,7 +8,7 @@
   programs.home-manager.enable = true;
 
   programs.git.enable = true;
-  programs.fish.enable = true;
+  # programs.fish.enable = true;
   programs.bash.enable = true;
   targets.genericLinux.enable = true;
 
@@ -17,11 +17,12 @@
     ./wsl/packages.nix
   ];
 
-  programs.eza.enable = true;
+  # programs.eza.enable = true;
 
   programs.zoxide = {
     enable = true;
     options = ["--cmd s"];
+    enableNushellIntegration = true;
   };
 
   programs.direnv = {
