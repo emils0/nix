@@ -14,8 +14,9 @@ in {
 
   environment.variables = {EDITOR = "hx";};
 
-  users.users.emil.shell = pkgs.fish;
-  programs.fish.enable = true;
+  users.users.emil.shell = pkgs.nushell;
+  # programs.fish.enable = true;
+  # programs.nushell.enable = true;
 
   nix.extraOptions = ''
     experimental-features = nix-command flakes
@@ -58,16 +59,18 @@ in {
     home.stateVersion = "22.11";
     nixpkgs.config.allowUnfree = true;
 
-    programs.fish.enable = true;
+    # programs.fish.enable = true;
 
     programs.direnv = {
       enable = true;
       nix-direnv.enable = true;
     };
 
+    programs.nushell.enable = true;
     programs.zoxide = {
       enable = true;
       options = ["--cmd s"];
+      enableNushellIntegration = true;
     };
 
     home.file.".config/tridactyl/tridactylrc".source = ./tridactylrc;

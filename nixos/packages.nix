@@ -75,7 +75,6 @@
     clang-tools
     delve
     black
-    nixfmt
 
     libgccjit
     gcc11

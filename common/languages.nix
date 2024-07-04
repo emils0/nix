@@ -1,12 +1,22 @@
-let
-  copilot_key = builtins.readFile ./.copilot_key;
+{pkgs, ...}: let
+  copilot-key = builtins.readFile ./.copilot_key;
+  arduino-yaml =
+    if pkgs.stdenv.isDarwin == "x86_64-darwin"
+    then "${builtins.getEnv "HOME"}/Library/Arduino15/arduino-cli.yaml"
+    else "${builtins.getEnv "HOME"}/.arduino15/arduino-cli.yaml";
 in {
   programs.helix.languages = {
     language-server = {
       # helix-gpt
       gpt = {
         command = "helix-gpt";
-        args = ["--handler" "copilot" "--copilotApiKey" copilot_key];
+        args = ["--handler" "copilot" "--copilotApiKey" copilot-key];
+      };
+
+      # arduino
+      arduino-lsp = {
+        command = "arduino-language-server";
+        args = ["-cli-config" arduino-yaml];
       };
 
       # java
@@ -57,6 +67,15 @@ in {
           unit = "    ";
         };
         language-servers = ["jdt"];
+      }
+
+      {
+        name = "cpp";
+        language-servers = ["arduino-lsp"];
+        scope = "source.arduino";
+        roots = ["sketch.yaml"];
+        auto-format = true;
+        formatter.command = "clang-format";
       }
 
       {

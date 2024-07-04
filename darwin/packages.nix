@@ -25,12 +25,12 @@
     nil
     sqls
     rust-analyzer
+    arduino-language-server
     omnisharp-roslyn
     jsonnet
     clang-tools
     delve
     rustfmt
-    nixfmt
     pandoc
     terminal-typeracer
     kalker
@@ -55,6 +55,7 @@
     cargo-watch
     openssl_3_0
     zld
+    pyright
 
     python3Packages.pip
     nodePackages.npm
@@ -63,7 +64,6 @@
     nodePackages.svelte-language-server
     nodePackages.prettier
     nodePackages.mermaid-cli
-    nodePackages.pyright
     nodePackages."@angular/cli"
 
     (
