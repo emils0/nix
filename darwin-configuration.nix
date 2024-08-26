@@ -76,9 +76,7 @@ in {
     home.file.".config/tridactyl/tridactylrc".source = ./tridactylrc;
   };
 
-  fonts.fontDir.enable = true;
-
-  fonts.fonts = with pkgs; [
+  fonts.packages = with pkgs; [
     (nerdfonts.override {fonts = ["FiraCode" "CascadiaCode"];})
     fira-code
     tamzen

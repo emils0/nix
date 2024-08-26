@@ -43,7 +43,7 @@
       "element"
       "keepassxc"
       "microsoft-teams"
-      "wezterm"
+      # "wezterm"
       "dotnet-sdk"
       "mongodb-compass"
 
@@ -53,7 +53,10 @@
       "arduino-ide"
     ];
 
-    masApps = {Amphetamine = 937984704;};
+    masApps = {
+      Amphetamine = 937984704;
+      WireGuard = 1451685025;
+    };
 
     taps = [
       "homebrew/services"
