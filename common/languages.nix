@@ -25,11 +25,14 @@ in {
       # python
       pyright = {
         command = "pyright-langserver";
-        args = ["--stdio" "--lib"];
+        args = ["--stdio" "--lib" "-p" "."];
         config = {};
       };
 
-      ruff.command = "ruff-lsp";
+      ruff = {
+        command = "ruff";
+        args = ["server"];
+      };
 
       # nix
       nil = {
@@ -92,7 +95,6 @@ in {
           }
           # "gpt"
         ];
-        roots = ["pyproject.toml" "setup.py" "Poetry.lock" "."];
       }
 
       {

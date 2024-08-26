@@ -32,6 +32,7 @@
     delve
     rustfmt
     pandoc
+    # terminal-typeracer
     kalker
     mongosh
 

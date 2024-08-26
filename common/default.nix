@@ -8,5 +8,6 @@
     ./wezterm.nix
     ./zellij.nix
     ./nu.nix
+    ./ruff.nix
   ];
 }
