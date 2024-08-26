@@ -23,7 +23,6 @@
     su
     helix-gpt
 
-    ruff
     bun
     nil
     sqls
@@ -35,7 +34,7 @@
     delve
     rustfmt
     pandoc
-    terminal-typeracer
+    # terminal-typeracer
     kalker
 
     clang
@@ -43,6 +42,7 @@
     cargo-tauri
     cargo-criterion
 
+    fish
     zstd
     pkg-config
     gradle
@@ -56,7 +56,6 @@
     cargo-watch
     # pylyzer
 
-    python3Packages.pip
     nodePackages.npm
     nodePackages.typescript
     nodePackages.typescript-language-server
@@ -69,10 +68,9 @@
       let
         my-python-packages = python-packages:
           with python-packages; [
-            isort
-            black
+            uv
           ];
-        python-with-my-packages = python311.withPackages my-python-packages;
+        python-with-my-packages = python312.withPackages my-python-packages;
       in
         python-with-my-packages
     )
