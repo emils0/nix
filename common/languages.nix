@@ -93,8 +93,20 @@ in {
             name = "pyright";
             except-features = ["format"];
           }
-          # "gpt"
         ];
+        debugger = {
+          name = "debugpy";
+          transport = "stdio";
+          command = "python3";
+          args = ["-m"  "debugpy.adapter"];
+          templates = [{
+            name = "source";
+            request = "launch";
+            completion = [ { name = "entrypoint"; completion = "filename"; default = "."; } ];
+            args = { mode = "debug"; program = "{0}";};
+          }];
+        };
+
       }
 
       {

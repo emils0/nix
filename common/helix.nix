@@ -11,12 +11,12 @@
       marksman
       ltex-ls
       taplo
-      # ruff-lsp
       wsl-open
       csharp-ls
       dockerfile-language-server-nodejs
       dockfmt
       vscode-langservers-extracted
+      lldb
     ];
   };
 
