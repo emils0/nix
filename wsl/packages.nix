@@ -28,7 +28,7 @@
     nil
     sqls
     rust-analyzer
-    pyright
+    basedpyright
     omnisharp-roslyn
     jsonnet
     clang-tools

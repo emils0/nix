@@ -1,11 +1,17 @@
 {pkgs, ...}: let
   arduino-yaml =
-    if pkgs.stdenv.isDarwin == "x86_64-darwin"
+    if pkgs.stdenv.isDarwin
     then "${builtins.getEnv "HOME"}/Library/Arduino15/arduino-cli.yaml"
     else "${builtins.getEnv "HOME"}/.arduino15/arduino-cli.yaml";
 in {
   programs.helix.languages = {
     language-server = {
+      # Emmet
+      emmet = {
+        command = "emmet-ls";
+        args = ["--stdio"];
+      };
+
       # Typst
       tinymist = {
         config = {
@@ -28,6 +34,16 @@ in {
         command = "pyright-langserver";
         args = ["--stdio" "--lib" "-p" "."];
         config = {};
+      };
+
+      basedpyright.roots = ["pyproject.toml" "setup.py" "Poetry.lock" "."];
+      basedpyright.config.basedpyright = {
+        analysis.typeCheckingMode = "standard";
+        analysis.diagnosticMode = "workspace";
+        analysis.logLevel = "Error";
+        analysis.useLibraryCodeForType = true;
+        analysis.autoImportCompletions = true;
+        disableOrganizeImports = true;
       };
 
       ruff = {
@@ -91,7 +107,7 @@ in {
             only-features = ["format" "diagnostics" "code-action"];
           }
           {
-            name = "pyright";
+            name = "basedpyright";
             except-features = ["format"];
           }
         ];
@@ -103,6 +119,7 @@ in {
           command = "prettier";
           args = ["--parser" "html"];
         };
+        language-servers = ["vscode-html-language-server" "emmet"];
       }
 
       {
@@ -119,6 +136,7 @@ in {
           command = "prettier";
           args = ["--parser" "css"];
         };
+        language-servers = ["vscode-css-language-server" "emmet"];
         auto-format = true;
       }
 
@@ -178,6 +196,7 @@ in {
       {
         name = "svelte";
         auto-format = true;
+        language-servers = ["svelteserver" "emmet"];
       }
 
       {

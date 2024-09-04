@@ -6,8 +6,7 @@
       per-file-ignores = {"__init__.py" = ["F401"];};
       select = [
         "E"
-        "W"
-        "D" # Pycodestyle errors and warnings (also checks docstrings.)
+        "W" # Pycodestyle errors and warnings (also checks docstrings.)
         "C901" # McCabe complexity check (should never exceed 10.)
         "F" # Pyflakes error analysis.
         "N" # PEP8 naming convention check.
@@ -24,6 +23,13 @@
 
       pydocstyle.convention = "google";
       extend-ignore = ["E501" "N818" "B006" "RUF015" "D202" "D100" "D101" "D105" "D107" "RET503" "TCH002"];
+
+
+      flake8-annotations = {
+        allow-star-arg-any = true;      # Allows untyped *args and **kwargs.
+        suppress-dummy-args = true;     # Ignores type annotations from dummy arguments.
+        suppress-none-returning = true; # Allows functions that don't return anything to not hint return type.
+      };
     };
   };
 }

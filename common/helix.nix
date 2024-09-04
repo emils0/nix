@@ -19,6 +19,7 @@
       lldb
       yaml-language-server
       tinymist
+      emmet-ls
     ];
   };
 
