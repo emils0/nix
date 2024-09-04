@@ -22,6 +22,7 @@
     slirp4netns
     su
     helix-gpt
+    typst
 
     bun
     nil

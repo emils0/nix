@@ -17,6 +17,8 @@
       dockfmt
       vscode-langservers-extracted
       lldb
+      yaml-language-server
+      tinymist
     ];
   };
 

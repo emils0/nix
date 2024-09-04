@@ -1,5 +1,4 @@
 {pkgs, ...}: let
-  copilot-key = builtins.readFile ./.copilot_key;
   arduino-yaml =
     if pkgs.stdenv.isDarwin == "x86_64-darwin"
     then "${builtins.getEnv "HOME"}/Library/Arduino15/arduino-cli.yaml"
@@ -7,10 +6,12 @@
 in {
   programs.helix.languages = {
     language-server = {
-      # helix-gpt
-      gpt = {
-        command = "helix-gpt";
-        args = ["--handler" "copilot" "--copilotApiKey" copilot-key];
+      # Typst
+      tinymist = {
+        config = {
+          exportPdf = "onType";
+          outputPath = "$root/target/$dir/$name";
+        };
       };
 
       # arduino
@@ -94,19 +95,6 @@ in {
             except-features = ["format"];
           }
         ];
-        debugger = {
-          name = "debugpy";
-          transport = "stdio";
-          command = "python3";
-          args = ["-m"  "debugpy.adapter"];
-          templates = [{
-            name = "source";
-            request = "launch";
-            completion = [ { name = "entrypoint"; completion = "filename"; default = "."; } ];
-            args = { mode = "debug"; program = "{0}";};
-          }];
-        };
-
       }
 
       {
