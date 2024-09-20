@@ -1,4 +1,5 @@
 $env.CARAPACE_BRIDGES = "fish,bash"
+$env.GPG_TTY = (tty)
 
 let carapace_completer = {|spans|
     carapace $spans.0 nushell ...$spans | from json
@@ -18,3 +19,4 @@ $env.config = {
         }
     }
 } 
+

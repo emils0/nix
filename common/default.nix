@@ -9,5 +9,6 @@
     ./zellij.nix
     ./nu.nix
     ./ruff.nix
+    ./git.nix
   ];
 }

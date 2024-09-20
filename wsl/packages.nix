@@ -23,6 +23,9 @@
     su
     helix-gpt
     typst
+    difftastic
+    tailspin
+    devenv
 
     bun
     nil

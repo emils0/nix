@@ -55,7 +55,6 @@ in {
       nil = {
         command = "nil";
         config.nil = {
-          formatting.command = ["alejandra"];
           nix = {
             maxMemoryMB = 5120;
             flake.autoArchive = true;
@@ -91,9 +90,9 @@ in {
 
       {
         name = "cpp";
-        language-servers = ["arduino-lsp"];
-        scope = "source.arduino";
-        roots = ["sketch.yaml"];
+        # language-servers = ["arduino-lsp"];
+        # scope = "source.arduino";
+        # roots = ["sketch.yaml"];
         auto-format = true;
         formatter.command = "clang-format";
       }
@@ -201,7 +200,14 @@ in {
 
       {
         name = "nix";
-        language-servers = ["nil"];
+        formatter.command = "alejandra";
+        language-servers = [
+          {
+            name = "nil";
+            except-features = ["format"];
+          }
+        ];
+
         auto-format = true;
       }
 

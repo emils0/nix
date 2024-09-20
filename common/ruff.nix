@@ -24,10 +24,9 @@
       pydocstyle.convention = "google";
       extend-ignore = ["E501" "N818" "B006" "RUF015" "D202" "D100" "D101" "D105" "D107" "RET503" "TCH002"];
 
-
       flake8-annotations = {
-        allow-star-arg-any = true;      # Allows untyped *args and **kwargs.
-        suppress-dummy-args = true;     # Ignores type annotations from dummy arguments.
+        allow-star-arg-any = true; # Allows untyped *args and **kwargs.
+        suppress-dummy-args = true; # Ignores type annotations from dummy arguments.
         suppress-none-returning = true; # Allows functions that don't return anything to not hint return type.
       };
     };
