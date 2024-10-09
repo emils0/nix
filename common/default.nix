@@ -10,5 +10,7 @@
     ./nu.nix
     ./ruff.nix
     ./git.nix
+    ./yazi.nix
+    ./direnv.nix
   ];
 }

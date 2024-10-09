@@ -46,7 +46,7 @@
     cargo-tauri
     cargo-criterion
 
-    fish
+    ouch
     zstd
     pkg-config
     gradle

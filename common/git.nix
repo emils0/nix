@@ -1,6 +1,8 @@
 {
   programs.git = {
     enable = true;
+    difftastic.enable = true;
+    difftastic.display = "inline";
 
     signing = {
       key = "BD2531BB4E59BB55";
