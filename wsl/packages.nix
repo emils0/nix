@@ -2,6 +2,7 @@
   home.packages = with pkgs; [
     alejandra
     git-ignore
+    gitui
     comma
     cachix
     ripgrep
@@ -32,6 +33,7 @@
     sqls
     rust-analyzer
     basedpyright
+    poetry
     omnisharp-roslyn
     jsonnet
     clang-tools

@@ -12,7 +12,10 @@ in {
       "string.regexp" = gruvbox.blue;
       "comment" = gruvbox.gray0;
       "variable" = gruvbox.fg0;
-      "variable.builtin" = gruvbox.purple;
+      "variable.builtin" = {
+        fg = gruvbox.purple;
+        modifiers = ["italic"];
+      };
       "variable.parameter" = gruvbox.fg0;
       "variable.other.member" = gruvbox.yellow;
       "label" = gruvbox.aqua;

@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  helix-flake,
+  ...
+}: {
   imports = [
     ./languages.nix
     ./themes/gruvbox
@@ -6,6 +10,7 @@
 
   programs.helix = {
     enable = true;
+    package = helix-flake.packages.${pkgs.system}.default;
 
     extraPackages = with pkgs; [
       marksman
@@ -45,7 +50,10 @@
     cursorline = true;
     cursorcolumn = true;
     line-number = "absolute";
-    popup-border = "none";
+    popup-border = "menu";
+
+    end-of-line-diagnostics = "hint";
+    inline-diagnostics.cursor-line = "warning";
 
     statusline = {
       left = ["mode" "file-name" "read-only-indicator" "file-modification-indicator"];
