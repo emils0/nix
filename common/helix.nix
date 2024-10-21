@@ -73,16 +73,16 @@
       select = "underline";
     };
 
-    auto-pairs = {
-      "<" = ">";
-    };
-
     indent-guides = {
       render = true;
       skip-levels = 1;
     };
 
+    sticky-context.enable = true;
+
     soft-wrap.enable = true;
+
+    rounded-corners = true;
 
     lsp = {
       display-messages = true;
