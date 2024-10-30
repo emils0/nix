@@ -1,6 +1,6 @@
 {
   pkgs,
-  helix-flake,
+  helix,
   ...
 }: {
   imports = [
@@ -10,7 +10,7 @@
 
   programs.helix = {
     enable = true;
-    package = helix-flake.packages.${pkgs.system}.default;
+    package = helix.packages.${pkgs.system}.default;
 
     extraPackages = with pkgs; [
       marksman

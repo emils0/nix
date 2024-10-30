@@ -6,47 +6,52 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     helix.url = "gitlab:emil-s/helix-fork";
+
+    # Uncomment when adding macOS configurations
+    # darwin = {
+    #   url = "github:lnl7/nix-darwin";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
   };
 
   outputs = {
+    self,
     nixpkgs,
     home-manager,
     helix,
     ...
   }: let
-    system = "x86_64-linux";
-    pkgs = nixpkgs.legacyPackages.${system};
+    lib = import ./lib {inherit nixpkgs home-manager helix;};
   in {
-    homeConfigurations."emil" = home-manager.lib.homeManagerConfiguration {
-      inherit pkgs;
-
-      extraSpecialArgs = {
-        helix-flake = helix;
-      };
-
-      modules = [
+    homeConfigurations.work-wsl = lib.mkHomeConfig {
+      extraModules = [
+        ./wsl/packages.nix
         {
-          home = {
-            username = "emil";
-            homeDirectory = "/home/emil";
-            stateVersion = "22.11";
-          };
-          programs.home-manager.enable = true;
-          programs.git.enable = true;
-          programs.bash.enable = true;
-          targets.genericLinux.enable = true;
           programs.zoxide = {
             enable = true;
             options = ["--cmd s"];
             enableNushellIntegration = true;
           };
-
-          imports = [
-            ./common
-            ./wsl/packages.nix
-          ];
         }
       ];
     };
+
+    # NixOS Configurations (uncomment when needed)
+    # nixosConfigurations = {
+    #   "my-nixos" = lib.mkNixosConfig {
+    #     extraModules = [
+    #       ./hosts/my-nixos/configuration.nix
+    #     ];
+    #   };
+    # };
+
+    # Darwin Configurations (uncomment when needed)
+    # darwinConfigurations = {
+    #   "my-mac" = lib.mkDarwinConfig {
+    #     extraModules = [
+    #       ./hosts/my-mac/configuration.nix
+    #     ];
+    #   };
+    # };
   };
 }
