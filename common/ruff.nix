@@ -19,10 +19,12 @@
         "UP" # Checks for outdated and deprecated code (can always fix it for you.)
         "RET" # Checks for useless returns or assignments in functions.
         "FA100" # Incorrect use of typing check (like using List/Dict instead of list/dict.)
+        "PIE"
+        "PERF"
       ];
 
       pydocstyle.convention = "google";
-      extend-ignore = ["E501" "N818" "B006" "RUF015" "D202" "D100" "D101" "D105" "D107" "RET503" "TCH002"];
+      extend-ignore = ["E501" "N818" "B006" "RUF015" "D202" "D100" "D101" "D105" "D107" "RET503" "TCH002" "SIM112"];
 
       flake8-annotations = {
         allow-star-arg-any = true; # Allows untyped *args and **kwargs.
@@ -30,5 +32,6 @@
         suppress-none-returning = true; # Allows functions that don't return anything to not hint return type.
       };
     };
+    settings.target-version = "py312";
   };
 }

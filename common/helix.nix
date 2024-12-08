@@ -39,7 +39,6 @@
   };
 
   programs.helix.settings.editor = {
-    shell = ["nu" "--stdin" "-c"];
     bufferline = "multiple";
     scrolloff = 9;
     idle-timeout = 50;
@@ -51,6 +50,8 @@
     cursorcolumn = true;
     line-number = "absolute";
     popup-border = "menu";
+
+    rainbow-brackets = true;
 
     end-of-line-diagnostics = "hint";
     inline-diagnostics.cursor-line = "warning";
@@ -65,6 +66,13 @@
         insert = "INSERT";
         select = "SELECT";
       };
+    };
+
+    persistence = {
+      old-files = true;
+      commands = true;
+      search = true;
+      clipboard = true;
     };
 
     cursor-shape = {

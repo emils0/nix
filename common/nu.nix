@@ -1,4 +1,8 @@
-{pkgs, ...}: let
+{
+  pkgs,
+  lib,
+  ...
+}: let
   env =
     if pkgs.stdenv.isDarwin
     then ''
@@ -22,8 +26,19 @@ in {
   programs.nushell = {
     enable = true;
     configFile.source = ./config.nu;
-    extraConfig = env;
+    extraConfig = lib.concatStrings [
+      env
+      (builtins.readFile ./env.nu)
+    ];
   };
+
+  home.packages = with pkgs; [
+    nushellPlugins.highlight
+    nushellPlugins.polars
+    nushellPlugins.query
+    nufmt
+    fish
+  ];
 
   programs.carapace.enable = true;
   programs.carapace.enableNushellIntegration = true;
