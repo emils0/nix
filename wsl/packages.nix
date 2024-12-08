@@ -1,6 +1,7 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
     alejandra
+    jujutsu
     git-ignore
     gitui
     comma
