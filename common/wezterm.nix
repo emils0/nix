@@ -1,8 +1,9 @@
-let
+{pkgs, ...}: let
   theme = import ./themes/gruvbox/mix-dark-soft.nix;
 in {
   programs.wezterm = {
     enable = true;
+    package = pkgs.runCommand "dummy-wezterm" {} "mkdir $out";
 
     extraConfig = builtins.readFile ./wezterm.lua;
 

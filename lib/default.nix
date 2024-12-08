@@ -2,6 +2,7 @@
   nixpkgs,
   home-manager,
   helix,
+  darwin,
   ...
 }: {
   mkHomeConfig = {
@@ -53,20 +54,25 @@
   #   };
 
   # Helper function for Darwin configurations (uncomment when needed)
-  # mkDarwinConfig = { system ? "aarch64-darwin", extraModules ? [] }:
-  #   darwin.lib.darwinSystem {
-  #     inherit system;
-  #     specialArgs = {
-  #       inherit helix;
-  #     };
-  #     modules = [
-  #       ../common/darwin.nix
-  #       home-manager.darwinModules.home-manager
-  #       {
-  #         home-manager.useGlobalPkgs = true;
-  #         home-manager.useUserPackages = true;
-  #         home-manager.users.emil = import ../common;
-  #       }
-  #     ] ++ extraModules;
-  #   };
+  mkDarwinConfig = {
+    system ? "aarch64-darwin",
+    extraModules ? [],
+  }:
+    darwin.lib.darwinSystem {
+      inherit system;
+      specialArgs = {
+        inherit helix;
+      };
+      modules =
+        [
+          ../common/darwin.nix
+          home-manager.darwinModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.emil = import ../common;
+          }
+        ]
+        ++ extraModules;
+    };
 }

@@ -4,6 +4,7 @@
     onActivation.cleanup = "zap";
 
     onActivation.upgrade = true;
+    onActivation.autoUpdate = true;
 
     brews = [
       # "yabai"
@@ -31,8 +32,9 @@
       # "dotnet-sdk"
 
       # "emacs-app-nightly"
-      "brave-browser"
-      "firefox-developer-edition"
+      "tor-browser"
+      "firefox@developer-edition"
+      "zen-browser"
       "orion"
       "utm"
       "discord"
@@ -50,7 +52,7 @@
       "android-platform-tools"
       "android-studio"
       "flutter"
-      "arduino-ide"
+      "wezterm"
     ];
 
     masApps = {

@@ -19,6 +19,7 @@
     fd
     so
     gnuplot
+    devenv
 
     nodejs
     bun
@@ -64,7 +65,7 @@
     nodePackages.svelte-language-server
     nodePackages.prettier
     nodePackages.mermaid-cli
-    nodePackages."@angular/cli"
+    # nodePackages."@angular/cli"
 
     (
       let

@@ -10,7 +10,10 @@
 
   programs.helix = {
     enable = true;
-    package = helix.packages.${pkgs.system}.default;
+    package =
+      if pkgs.stdenv.isDarwin
+      then pkgs.helix
+      else helix.packages.${pkgs.system}.default;
 
     extraPackages = with pkgs; [
       marksman

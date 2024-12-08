@@ -8,10 +8,10 @@
     helix.url = "gitlab:emil-s/helix-fork";
 
     # Uncomment when adding macOS configurations
-    # darwin = {
-    #   url = "github:lnl7/nix-darwin";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
+    darwin = {
+      url = "github:lnl7/nix-darwin";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
@@ -46,12 +46,12 @@
     # };
 
     # Darwin Configurations (uncomment when needed)
-    # darwinConfigurations = {
-    #   "my-mac" = lib.mkDarwinConfig {
-    #     extraModules = [
-    #       ./hosts/my-mac/configuration.nix
-    #     ];
-    #   };
-    # };
+    darwinConfigurations = {
+      "macbook" = lib.mkDarwinConfig {
+        extraModules = [
+          ./darwin/packages.nix
+        ];
+      };
+    };
   };
 }

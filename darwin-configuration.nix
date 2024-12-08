@@ -34,6 +34,7 @@ in {
     home = "/Users/emil";
   };
 
+  home-manager.backupFileExtension = "backup";
   home-manager.useUserPackages = true;
 
   home-manager.useGlobalPkgs = true;
@@ -77,7 +78,7 @@ in {
   };
 
   fonts.packages = with pkgs; [
-    (nerdfonts.override {fonts = ["FiraCode" "CascadiaCode"];})
+    intel-one-mono
     fira-code
     tamzen
     work-sans
