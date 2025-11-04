@@ -1,7 +1,7 @@
 {pkgs, ...}: let
   arduino-yaml =
     if pkgs.stdenv.isDarwin
-    then "${builtins.getEnv "HOME"}/Library/Arduino15/arduino-cli.yaml"
+    then "/Users/emil/Library/Arduino15/arduino-cli.yaml"
     else "${builtins.getEnv "HOME"}/.arduino15/arduino-cli.yaml";
 in {
   programs.helix.languages = {
@@ -23,11 +23,8 @@ in {
       # arduino
       arduino-lsp = {
         command = "arduino-language-server";
-        args = ["-cli-config" arduino-yaml];
+        args = ["-cli-config" arduino-yaml "-cli" "arduino-cli"];
       };
-
-      # java
-      jdt.command = "jdt-language-server";
 
       # python
       pyright = {
@@ -77,22 +74,19 @@ in {
     language = [
       {
         name = "java";
-        scope = "source.java";
-        injection-regex = "java";
-        file-types = ["java"];
-        roots = ["pom.xml" "build.gradle"];
-        indent = {
-          tab-width = 4;
-          unit = "    ";
-        };
-        language-servers = ["jdt"];
+        auto-format = true;
       }
 
       {
         name = "cpp";
-        # language-servers = ["arduino-lsp"];
-        # scope = "source.arduino";
-        # roots = ["sketch.yaml"];
+        language-servers = [
+          {
+            name = "arduino-lsp";
+            except-features = ["inlay-hints"];
+          }
+        ];
+        scope = "source.arduino";
+        roots = ["sketch.yaml"];
         auto-format = true;
         formatter.command = "clang-format";
       }

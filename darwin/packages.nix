@@ -1,5 +1,7 @@
 {pkgs, ...}: {
-  home.packages = with pkgs; [
+  home-manager.users.emil.nixpkgs.config.allowUnfree = true;
+
+  home-manager.users.emil.home.packages = with pkgs; [
     alejandra
     git-ignore
     comma
@@ -26,19 +28,23 @@
     nil
     sqls
     rust-analyzer
+    jdt-language-server
     arduino-language-server
     omnisharp-roslyn
     jsonnet
-    clang-tools
+    # clang
+    # clang-tools
+    # llvm
     delve
     rustfmt
     pandoc
     # terminal-typeracer
     kalker
     mongosh
+    tailwindcss-language-server
+    loco-cli
 
     lua
-    clang
     cargo
     cargo-criterion
     sea-orm-cli
@@ -46,17 +52,18 @@
     gnumake
     cmake
     libtool
-    kotlin
-    kotlin-native
     rustc
     sqlx-cli
     go
     clippy
-    cargo-edit
-    cargo-watch
     openssl_3_0
     zld
     pyright
+    libiconv
+    cargo-watch
+    tio
+
+    # claude-code
 
     python3Packages.pip
     nodePackages.npm

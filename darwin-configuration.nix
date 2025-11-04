@@ -12,7 +12,7 @@ in {
 
   nixpkgs.config.allowUnfree = true;
 
-  environment.variables = {EDITOR = "hx";};
+  environment.variables.EDITOR = "hx";
 
   users.users.emil.shell = pkgs.nushell;
   # programs.fish.enable = true;
@@ -53,7 +53,7 @@ in {
     programs.home-manager.enable = true;
 
     programs.java.enable = true;
-    programs.java.package = pkgs.temurin-bin;
+    programs.java.package = pkgs.temurin-bin-23;
 
     # disabledModules = ["targets/darwin/linkapps.nix"];
 

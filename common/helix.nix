@@ -10,10 +10,7 @@
 
   programs.helix = {
     enable = true;
-    package =
-      if pkgs.stdenv.isDarwin
-      then pkgs.helix
-      else helix.packages.${pkgs.system}.default;
+    package = helix.packages.${pkgs.system}.default;
 
     extraPackages = with pkgs; [
       marksman
@@ -42,6 +39,8 @@
   };
 
   programs.helix.settings.editor = {
+    shell = ["zsh"];
+
     bufferline = "multiple";
     scrolloff = 9;
     idle-timeout = 50;
@@ -54,7 +53,7 @@
     line-number = "absolute";
     popup-border = "menu";
 
-    rainbow-brackets = true;
+    # rainbow-brackets = true;
 
     end-of-line-diagnostics = "hint";
     inline-diagnostics.cursor-line = "warning";
@@ -71,12 +70,12 @@
       };
     };
 
-    persistence = {
-      old-files = true;
-      commands = true;
-      search = true;
-      clipboard = true;
-    };
+    # persistence = {
+    #   old-files = true;
+    #   commands = true;
+    #   search = true;
+    #   clipboard = true;
+    # };
 
     cursor-shape = {
       normal = "block";
@@ -89,7 +88,7 @@
       skip-levels = 1;
     };
 
-    sticky-context.enable = true;
+    # sticky-context.enable = true;
 
     soft-wrap.enable = true;
 

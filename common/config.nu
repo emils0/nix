@@ -42,6 +42,10 @@ $env.config = {
         }
     }
 
+    table: {
+        mode: "rounded"
+    }
+
     display_errors: {
         exit_code: true
     }

@@ -7,6 +7,7 @@
     onActivation.autoUpdate = true;
 
     brews = [
+      "llvm"
       # "yabai"
       "aspell"
       # "gcc"
@@ -20,18 +21,15 @@
       "automake"
       "libtool"
       "cocoapods"
-      "firebase-cli"
 
       # temporary
       # "rustfmt"
-      "dart"
       "arduino-cli"
+      "tomcat"
     ];
 
     casks = [
-      # "dotnet-sdk"
-
-      # "emacs-app-nightly"
+      "obscura-vpn"
       "tor-browser"
       "firefox@developer-edition"
       "zen-browser"
@@ -45,13 +43,6 @@
       "element"
       "keepassxc"
       "microsoft-teams"
-      # "wezterm"
-      "dotnet-sdk"
-      "mongodb-compass"
-
-      "android-platform-tools"
-      "android-studio"
-      "flutter"
       "wezterm"
     ];
 
