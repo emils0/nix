@@ -1,0 +1,3 @@
+set hintchars arstdhneio
+
+set modeindicatormodes {"normal":"false","insert":"true","input":"true","ignore":"true","ex":"true","hint":"true","visual":"true"}

@@ -1,6 +1,6 @@
 {pkgs, ...}: {
   services.skhd = {
-    enable = true;
+    enable = false;
     package = pkgs.skhd;
 
     skhdConfig = ''

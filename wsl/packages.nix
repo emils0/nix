@@ -1,15 +1,13 @@
 {pkgs, ...}: {
-  home-manager.users.emil.nixpkgs.config.allowUnfree = true;
-
-  home-manager.users.emil.home.packages = with pkgs; [
+  home.packages = with pkgs; [
     alejandra
+    jujutsu
     git-ignore
+    gitui
     comma
     cachix
-    eza
     ripgrep
     wget
-    aria
     unzip
     bottom
     yt-dlp
@@ -20,68 +18,67 @@
     asciinema
     fd
     so
+    dotnet-sdk
     gnuplot
+    podman
+    slirp4netns
+    su
+    helix-gpt
+    typst
+    difftastic
+    tailspin
     devenv
 
-    nodejs
     bun
     nil
     sqls
     rust-analyzer
-    jdt-language-server
-    arduino-language-server
+    basedpyright
+    poetry
     omnisharp-roslyn
     jsonnet
-    # clang
-    # clang-tools
-    # llvm
+    clang-tools
     delve
     rustfmt
     pandoc
     # terminal-typeracer
     kalker
-    mongosh
-    tailwindcss-language-server
-    loco-cli
 
-    lua
+    clang
     cargo
+    cargo-tauri
     cargo-criterion
-    sea-orm-cli
+
+    ouch
+    zstd
+    pkg-config
     gradle
     gnumake
     cmake
     libtool
     rustc
-    sqlx-cli
     go
     clippy
-    openssl_3_0
-    zld
-    pyright
-    libiconv
+    cargo-edit
     cargo-watch
-    tio
+    # pylyzer
 
-    # claude-code
-
-    python3Packages.pip
     nodePackages.npm
     nodePackages.typescript
     nodePackages.typescript-language-server
     nodePackages.svelte-language-server
     nodePackages.prettier
     nodePackages.mermaid-cli
-    # nodePackages."@angular/cli"
+    nodePackages."@angular/cli"
 
     (
       let
         my-python-packages = python-packages:
           with python-packages; [
-            isort
-            black
+            uv
+            debugpy
           ];
-        python-with-my-packages = python311.withPackages my-python-packages;
+        python-with-my-packages = python312.withPackages my-python-packages;
       in
         python-with-my-packages
     )

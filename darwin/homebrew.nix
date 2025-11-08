@@ -4,27 +4,35 @@
     onActivation.cleanup = "zap";
 
     onActivation.upgrade = true;
+    onActivation.autoUpdate = true;
 
     brews = [
+      "llvm"
       # "yabai"
       "aspell"
-      "gcc"
-      "libgccjit"
-      "pyqt"
+      # "gcc"
+      # "libgccjit"
+      # "pyqt"
       "coreutils"
-      "gdb"
+      # "gdb"
       "texlab"
-      "pkg-config"
-      "poppler"
+      # "pkg-config"
+      # "poppler"
       "automake"
       "libtool"
+      "cocoapods"
+
+      # temporary
+      # "rustfmt"
+      "arduino-cli"
+      "tomcat"
     ];
 
     casks = [
-      # "dotnet-sdk"
-
-      # "emacs-app-nightly"
-      "eloston-chromium"
+      "obscura-vpn"
+      "tor-browser"
+      "firefox@developer-edition"
+      "zen-browser"
       "orion"
       "utm"
       "discord"
@@ -33,19 +41,23 @@
       "steam"
       "transmission"
       "element"
-      "mactex-no-gui"
-      "metasploit"
-      "insomnia"
+      "keepassxc"
+      "microsoft-teams"
+      "wezterm"
     ];
 
-    masApps = {Amphetamine = 937984704;};
+    masApps = {
+      Amphetamine = 937984704;
+      WireGuard = 1451685025;
+    };
 
     taps = [
       "homebrew/services"
-      "homebrew/cask"
+      # "homebrew/cask"
       "homebrew/cask-versions"
       # "jimeh/emacs-builds"
       "koekeishiya/formulae"
+      "dart-lang/dart"
     ];
   };
 }
