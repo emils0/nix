@@ -2,6 +2,7 @@
   home.packages = with pkgs; [
     alejandra
     comma
+    cachix
     aspell
     aspellDicts.en
     aspellDicts.da
@@ -27,8 +28,8 @@
     gnupg
     imv
     asciinema
+    prismlauncher
 
-    neovide
     celluloid
     element-desktop
     insomnia
@@ -38,11 +39,8 @@
     blanket
     tor-browser-bundle-bin
     thunderbird
-    nyxt
     transmission-gtk
-    waydroid
     libreoffice-fresh
-    vscodium-fhs
     librewolf
     thunderbird
 
@@ -61,12 +59,13 @@
     yaru-remix-theme
     orchis-theme
 
-    python310
-    nodejs
-    dotnet-sdk
     omnisharp-roslyn
+    postgresql
+    nodejs
     rnix-lsp
+    sqls
     rust-analyzer
+    jdt-language-server
     jsonnet
     kotlin-language-server
     ktlint
@@ -74,47 +73,56 @@
     google-java-format
     clang-tools
     delve
+    rustfmt
     black
     nixfmt
+    pandoc
+    plantuml
+    httpie
+    exercism
 
-    libgccjit
-    gcc11
+    jdk
+    lua
     cargo
     gradle
     gnumake
     cmake
     libtool
-    glibc
-    jdk
     kotlin
     kotlin-native
     rustc
     go
     clippy
-    editorconfig-core-c
-    editorconfig-checker
-
-    python310Packages.pyqt5
-    python310Packages.sip
-    python310Packages.pyqtwebengine
-    python310Packages.epc
-    python310Packages.lxml
-    python310Packages.qrcode
-    python310Packages.pysocks
-    python310Packages.pymupdf
-    python310Packages.pypinyin
-    python310Packages.psutil
-    python310Packages.retry
-    python310Packages.markdown
-    python310Packages.python-lsp-server
+    cargo-edit
+    cargo-watch
+    openssl_3_0
 
     nodePackages.npm
+    nodePackages.degit
     nodePackages.typescript
     nodePackages.typescript-language-server
+    nodePackages.svelte-language-server
+    nodePackages.intelephense
     nodePackages.prettier
-    nodePackages.lua-fmt
-    # nodePackages.webtorrent-cli
+    nodePackages.mermaid-cli
+    nodePackages.vscode-langservers-extracted
     dotnetPackages.Nuget
-    haskellPackages.brittany
+
+    (
+      let
+        my-python-packages = python-packages:
+          with python-packages; [
+            jedi
+            python-lsp-server
+            pylint
+            flake8
+            rope
+            isort
+            mypy
+          ];
+        python-with-my-packages = python3.withPackages my-python-packages;
+      in
+        python-with-my-packages
+    )
   ];
 }
