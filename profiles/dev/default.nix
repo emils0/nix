@@ -1,0 +1,51 @@
+{pkgs, ...}: {
+  imports = [ ./python.nix ];
+  home.packages = with pkgs; [
+    ruff
+    omnisharp-roslyn
+    postgresql
+    gopls
+    google-java-format
+    clang-tools
+    gcc
+    delve
+    rustfmt
+    nixfmt
+    pandoc
+    plantuml
+    httpie
+    exercism
+    jdk
+    lua
+    cargo
+    gradle
+    gnumake
+    cmake
+    libtool
+    kotlin
+    kotlin-native
+    rustc
+    go
+    clippy
+    cargo-edit
+    cargo-watch
+    openssl_3
+    bun
+    nil
+    sqls
+    rust-analyzer
+    arduino-language-server
+    jsonnet
+    mongosh
+    tailwindcss-language-server
+    cargo-criterion
+    sea-orm-cli
+    sqlx-cli
+    pyright
+    libiconv
+    nodePackages.npm
+    nodePackages.typescript
+    nodePackages.prettier
+    nodePackages.mermaid-cli
+  ];
+}

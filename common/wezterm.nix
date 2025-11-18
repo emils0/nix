@@ -3,7 +3,7 @@
 in {
   programs.wezterm = {
     enable = true;
-    package = pkgs.runCommand "dummy-wezterm" {} "mkdir $out";
+    # package = pkgs.runCommand "dummy-wezterm" {} "mkdir $out";
 
     extraConfig = builtins.readFile ./wezterm.lua;
 
@@ -33,17 +33,6 @@ in {
         # background = theme.bg1;
 
         active_tab = {
-          bg_color = theme.bg0;
-          fg_color = theme.fg0;
-
-          intensity = "Bold";
-          underline = "None";
-
-          italic = false;
-          strikethrough = false;
-        };
-
-        active_tab_hover = {
           bg_color = theme.bg0;
           fg_color = theme.fg0;
 

@@ -1,81 +1,33 @@
 {
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    home-manager = {
-      url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+
+    home-manager.url = "github:nix-community/home-manager";
+    home-manager.inputs.nixpkgs.follows = "nixpkgs";
+
+    zen-browser.url = "github:0xc000022070/zen-browser-flake";
+    zen-browser.inputs.nixpkgs.follows = "nixpkgs";
+
     helix.url = "gitlab:emil-s/helix-fork";
 
-    darwin = {
-      url = "github:lnl7/nix-darwin";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    nix-gaming.url = "github:fufexan/nix-gaming";
+    nix-gaming.inputs.nixpkgs.follows = "nixpkgs";
+
+    darwin.url = "github:lnl7/nix-darwin";
+    darwin.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = {
-    self,
-    nixpkgs,
-    home-manager,
-    helix,
-    darwin,
-    ...
-  }: let
-    lib = import ./lib {inherit nixpkgs home-manager helix darwin;};
+  outputs = {self, ...} @ inputs: let
+    lib = inputs.nixpkgs.lib;
 
-    loco-overlay = final: prev: {
-      loco-cli = prev.rustPlatform.buildRustPackage rec {
-        pname = "loco";
-        version = "0.15.0";
-        src = prev.fetchCrate {
-          inherit pname version;
-          hash = "sha256-sTPFDdiYmw+ODAcuBh4XXpSXVZbbYxfjr+WiTGit18E=";
-        };
-        useFetchCargoVendor = true;
-        cargoHash = "sha256-EsNFdk7bLRzyfncDRxqS0CQGdtPFdRRSlpTTxbQ8csI=";
+    # Get a list of all directories in ./hosts
+    hostNames = lib.attrNames (builtins.readDir ./hosts);
 
-        checkFlags = ["--skip=cli_tests"];
-        meta = {
-          description = "Loco CLI is a powerful command-line tool designed to streamline the process of generating Loco websites";
-          homepage = "https://loco.rs";
-          changelog = "https://github.com/loco-rs/loco/blob/master/CHANGELOG.md";
-          license = prev.lib.licenses.asl20;
-          maintainers = with prev.lib.maintainers; [sebrut];
-          mainProgram = "loco";
-        };
-      };
-    };
-  in {
-    homeConfigurations.work-wsl = lib.mkHomeConfig {
-      extraModules = [
-        ./wsl/packages.nix
-        {
-          programs.zoxide = {
-            enable = true;
-            options = ["--cmd s"];
-            enableNushellIntegration = true;
-          };
-        }
-      ];
-    };
+    # Import all hosts found in the ./hosts directory
+    importedHosts = map (hostName: import (./hosts + "/${hostName}") inputs) hostNames;
 
-    # NixOS Configurations (uncomment when needed)
-    # nixosConfigurations = {
-    #   "my-nixos" = lib.mkNixosConfig {
-    #     extraModules = [
-    #       ./hosts/my-nixos/configuration.nix
-    #     ];
-    #   };
-    # };
-
-    # Darwin Configurations
-    darwinConfigurations.Emils-MacBook-Pro = lib.mkDarwinConfig {
-      extraModules = [
-        ./darwin/packages.nix
-        ./darwin/homebrew.nix
-        ./darwin/skhd.nix
-      ];
-      overlays = [loco-overlay];
-    };
-  };
+    # Merge the outputs of all imported hosts
+    allOutputs = lib.foldl' lib.recursiveUpdate {} importedHosts;
+  in
+    allOutputs;
 }

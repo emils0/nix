@@ -1,13 +1,13 @@
-{pkgs, ...}: let
-  home-manager =
-    builtins.fetchTarball
-    "https://github.com/nix-community/home-manager/archive/master.tar.gz";
-in {
+{
+  pkgs,
+  profiles,
+  common,
+  ...
+}: {
   imports = [
-    "${home-manager}/nix-darwin"
-    ./darwin/homebrew.nix
+    ./homebrew.nix
     # ./fish.nix
-    ./darwin/skhd.nix
+    ./skhd.nix
   ];
 
   nixpkgs.config.allowUnfree = true;
@@ -34,11 +34,6 @@ in {
     home = "/Users/emil";
   };
 
-  home-manager.backupFileExtension = "backup";
-  home-manager.useUserPackages = true;
-
-  home-manager.useGlobalPkgs = true;
-
   home-manager.users.emil = {
     pkgs,
     lib,
@@ -46,8 +41,10 @@ in {
   }: {
     imports = [
       # ./darwin/darwin-application-activation.nix
-      ./darwin/packages.nix
-      ./common
+      common
+      (profiles + "/cli")
+      (profiles + "/dev")
+      (profiles + "/lang-servers")
     ];
 
     programs.home-manager.enable = true;

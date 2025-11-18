@@ -18,7 +18,7 @@
       taplo
       wsl-open
       csharp-ls
-      dockerfile-language-server-nodejs
+      dockerfile-language-server
       dockfmt
       vscode-langservers-extracted
       lldb
