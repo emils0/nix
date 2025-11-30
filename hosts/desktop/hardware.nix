@@ -13,6 +13,33 @@
 
   services.xserver.videoDrivers = ["nvidia"];
 
+  # NVIDIA application profile to fix high VRAM usage in niri
+  # https://yalter.github.io/niri/Nvidia.html
+  environment.etc."nvidia/nvidia-application-profiles-rc.d/50-limit-free-buffer-pool-in-wayland-compositors.json".text = ''
+    {
+      "rules": [
+        {
+          "pattern": {
+            "feature": "procname",
+            "matches": "niri"
+          },
+          "profile": "Limit Free Buffer Pool On Wayland Compositors"
+        }
+      ],
+      "profiles": [
+        {
+          "name": "Limit Free Buffer Pool On Wayland Compositors",
+          "settings": [
+            {
+              "key": "GLVidHeapReuseRatio",
+              "value": 0
+            }
+          ]
+        }
+      ]
+    }
+  '';
+
   services.libinput.enable = true;
 
   # Audio
@@ -28,6 +55,7 @@
   services.pulseaudio.enable = false;
 
   # Hardware support
+  hardware.bluetooth.enable = true;
   hardware.steam-hardware.enable = true;
   hardware.graphics = {
     enable = true;

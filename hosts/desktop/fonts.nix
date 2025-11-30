@@ -8,6 +8,9 @@
     iosevka-bin
     overpass
     lato
+    nerd-fonts.jetbrains-mono
+    nerd-fonts.caskaydia-cove
+    nerd-fonts.iosevka
   ];
   fonts.fontconfig.subpixel.rgba = "rgb";
 }

@@ -8,8 +8,8 @@
     ./hardware-configuration.nix
 
     # Desktop environment profile
-    ../../profiles/desktop/gnome
-    # ../../profiles/desktop/niri
+    # ../../profiles/desktop/gnome
+    ../../profiles/desktop/niri
 
     # System-wide profiles
     ../../profiles/desktop/gaming
