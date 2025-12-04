@@ -19,7 +19,7 @@
     transmission_4-gtk
     libreoffice-fresh
     gnome-boxes
-    discord-canary
+    vesktop
     spotify
   ];
 }

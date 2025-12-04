@@ -5,10 +5,13 @@
 }: {
   imports = [nix-gaming.nixosModules.pipewireLowLatency];
 
+  programs.gamemode.enable = true;
+
   programs.steam = {
     enable = true;
 
     gamescopeSession.enable = true;
+
     remotePlay.openFirewall = true;
     dedicatedServer.openFirewall = true;
     localNetworkGameTransfers.openFirewall = true;
@@ -30,6 +33,7 @@
           stdenv.cc.cc.lib # Provides libstdc++.so.6
           libkrb5
           keyutils
+          freetype
         ];
     };
   };
@@ -44,11 +48,6 @@
     package = pkgs.ananicy-cpp;
     rulesProvider = pkgs.ananicy-rules-cachyos;
   };
-
-  # Protontricks for managing Proton prefixes
-  environment.systemPackages = with pkgs; [
-    protontricks
-  ];
 
   # Controller configuration.
   services.udev.extraRules = ''

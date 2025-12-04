@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{pkgs, ...}: {
   # User
   users.users.emil = {
     isNormalUser = true;

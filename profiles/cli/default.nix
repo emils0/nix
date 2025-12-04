@@ -34,6 +34,7 @@
     gnuplot
     devenv
     jujutsu
+    just
     gitui
     podman
     slirp4netns

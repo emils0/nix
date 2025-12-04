@@ -1,5 +1,5 @@
 {pkgs, ...}: {
-  imports = [ ./python.nix ];
+  imports = [./python.nix];
   home.packages = with pkgs; [
     ruff
     omnisharp-roslyn

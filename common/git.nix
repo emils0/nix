@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{pkgs, ...}: {
   programs.git = {
     enable = true;
 
@@ -15,9 +15,9 @@
   # Difftastic moved to its own program
   programs.difftastic = {
     enable = true;
-    git.enable = true;  # Explicitly enable git integration
+    git.enable = true; # Explicitly enable git integration
     options = {
-      display = "inline";  # or whatever you had
+      display = "inline"; # or whatever you had
       # other options
     };
   };
